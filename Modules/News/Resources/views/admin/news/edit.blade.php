@@ -2,17 +2,17 @@
 
 @section('content-header')
     <h1>
-        {{ trans('banner::banners.title.create banner') }}
+        {{ trans('news::news.title.edit news') }}
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-        <li><a href="{{ route('admin.banner.banner.index') }}">{{ trans('banner::banners.title.banners') }}</a></li>
-        <li class="active">{{ trans('banner::banners.title.create banner') }}</li>
+        <li><a href="{{ route('admin.news.news.index') }}">{{ trans('news::news.title.news') }}</a></li>
+        <li class="active">{{ trans('news::news.title.edit news') }}</li>
     </ol>
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['admin.banner.banner.store'], 'method' => 'post', 'id' => 'formbanner']) !!}
+    {!! Form::open(['route' => ['admin.news.news.update', $news->id], 'method' => 'put']) !!}
     <div class="row">
         <div class="col-md-12">
             <div class="nav-tabs-custom">
@@ -22,13 +22,13 @@
                     @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
                         <?php $i++; ?>
                         <div class="tab-pane {{ locale() == $locale ? 'active' : '' }}" id="tab_{{ $i }}">
-                            @include('banner::admin.banners.partials.create-fields', ['lang' => $locale])
+                            @include('news::admin.news.partials.edit-fields', ['lang' => $locale])
                         </div>
                     @endforeach
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.create') }}</button>
-                        <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.banner.banner.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
+                        <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.update') }}</button>
+                        <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.news.news.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
                     </div>
                 </div>
             </div> {{-- end nav-tabs-custom --}}
@@ -48,12 +48,11 @@
 @stop
 
 @push('js-stack')
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $( document ).ready(function() {
             $(document).keypressAction({
                 actions: [
-                    { key: 'b', route: "<?= route('admin.banner.banner.index') ?>" }
+                    { key: 'b', route: "<?= route('admin.news.news.index') ?>" }
                 ]
             });
         });
@@ -65,16 +64,5 @@
                 radioClass: 'iradio_flat-blue'
             });
         });
-    </script>
-    <script>
-        $("#formbanner").validate({
-			rules: {
-                "medias_single[image_banner]": {
-                    required: true
-                }
-                
-			}
-		});
-
     </script>
 @endpush

@@ -26,8 +26,10 @@ return [
         'status' => 'Status'
     ],
     'messages' => [
+       
     ],
     'validation' => [
+        'error_image' => 'Image banner field is required'
     ],
     'status' => [
         'enable' => 'Enable',

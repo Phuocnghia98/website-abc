@@ -54,7 +54,13 @@ class BannerController extends AdminBaseController
      */
     public function store(CreateBannerRequest $request)
     {
-       dd($request->all());
+        $credentials_option= $request->all();
+        if($credentials_option['medias_single']['image_banner']==null) {
+            return back()->withErrors([
+                'message' => "Image required"
+            ]);
+        }
+       
         $this->banner->create($request->all());
 
         return redirect()->route('admin.banner.banner.index')
@@ -81,7 +87,12 @@ class BannerController extends AdminBaseController
      */
     public function update(Banner $banner, UpdateBannerRequest $request)
     {
-       
+        $credentials_option= $request->all();
+        if($credentials_option['medias_single']['image_banner']==null) {
+            return back()->withErrors([
+                'message' => "Image required"
+            ]);
+        }
         $this->banner->update($banner, $request->all());
         
         return redirect()->route('admin.banner.banner.index')
