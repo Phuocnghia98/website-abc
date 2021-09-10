@@ -12,13 +12,13 @@ class CreateCourseCourseCateTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('course__coursecate_translations', function (Blueprint $table) {
+        Schema::table('course__coursecate_translations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->string('description');
-            $table->boolean('status')->default(1);
+            $table->string('description')->nullable();
+            $table->boolean('status')->default(0);
             $table->integer('coursecate_id')->unsigned();
             $table->string('locale')->index();
             $table->unique(['coursecate_id', 'locale']);
