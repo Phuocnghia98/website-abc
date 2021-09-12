@@ -4,7 +4,7 @@ namespace Modules\Course\Http\Requests;
 
 use Modules\Core\Internationalisation\BaseFormRequest;
 
-class UpdateCourseCateRequest extends BaseFormRequest
+class UpdateCourseRequest extends BaseFormRequest
 {
     public function rules()
     {
@@ -14,9 +14,10 @@ class UpdateCourseCateRequest extends BaseFormRequest
     public function translationRules()
     {
         return [
-            'name' =>'required',
-            'slug' =>'required',
-            'description' =>'required',
+            'title'=>'required',
+            'slug'=>'required',
+            'price'=>'required',
+
         ];
     }
 

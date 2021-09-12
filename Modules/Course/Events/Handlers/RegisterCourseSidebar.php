@@ -52,7 +52,27 @@ class RegisterCourseSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                         $this->auth->hasAccess('course.coursecates.index')
                     );
                 });
+                $item->item(trans('course::courses.title.courses'), function (Item $item) {
+                    $item->icon('fa fa-copy');
+                    $item->weight(0);
+                    $item->append('admin.course.course.create');
+                    $item->route('admin.course.course.index');
+                    $item->authorize(
+                        $this->auth->hasAccess('course.courses.index')
+                    );
+                });
+                $item->item(trans('course::teachers.title.teachers'), function (Item $item) {
+                    $item->icon('fa fa-copy');
+                    $item->weight(0);
+                    $item->append('admin.course.teacher.create');
+                    $item->route('admin.course.teacher.index');
+                    $item->authorize(
+                        $this->auth->hasAccess('course.teachers.index')
+                    );
+                });
 // append
+
+
 
             });
         });

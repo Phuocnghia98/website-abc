@@ -30,7 +30,11 @@ class CourseServiceProvider extends ServiceProvider
 
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
             $event->load('coursecates', array_dot(trans('course::coursecates')));
+            $event->load('courses', array_dot(trans('course::courses')));
+            $event->load('teachers', array_dot(trans('course::teachers')));
             // append translations
+
+
 
         });
     }
@@ -66,7 +70,33 @@ class CourseServiceProvider extends ServiceProvider
                 return new \Modules\Course\Repositories\Cache\CacheCourseCateDecorator($repository);
             }
         );
+        $this->app->bind(
+            'Modules\Course\Repositories\CourseRepository',
+            function () {
+                $repository = new \Modules\Course\Repositories\Eloquent\EloquentCourseRepository(new \Modules\Course\Entities\Course());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Course\Repositories\Cache\CacheCourseDecorator($repository);
+            }
+        );
+        $this->app->bind(
+            'Modules\Course\Repositories\TeacherRepository',
+            function () {
+                $repository = new \Modules\Course\Repositories\Eloquent\EloquentTeacherRepository(new \Modules\Course\Entities\Teacher());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Course\Repositories\Cache\CacheTeacherDecorator($repository);
+            }
+        );
 // add bindings
+
+
 
     }
 }

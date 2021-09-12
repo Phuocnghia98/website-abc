@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCourseCourseCatesTable extends Migration
+class CreateCourseCoursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateCourseCourseCatesTable extends Migration
      */
     public function up()
     {
-        Schema::table('course__coursecates', function (Blueprint $table) {
+        Schema::table('course__courses', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            // Your fields
+       
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateCourseCourseCatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course__coursecates');
+        Schema::dropIfExists('course__courses');
     }
 }

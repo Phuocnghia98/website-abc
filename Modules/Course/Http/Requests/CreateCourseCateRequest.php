@@ -34,7 +34,7 @@ class CreateCourseCateRequest extends BaseFormRequest
     {
         return [
             'name.required' =>trans('name is required'),
-            'slug.required' =>trans('slug  is unique'),
+            'slug.required' =>trans('slug  is required'),
         ];
     }
 }
