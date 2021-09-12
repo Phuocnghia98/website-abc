@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\Banner\Http\Requests;
+namespace Modules\News\Http\Requests;
 
 use Modules\Core\Internationalisation\BaseFormRequest;
 
-class CreateBannerRequest extends BaseFormRequest
+class CreateNews_categoriesRequest extends BaseFormRequest
 {
     public function rules()
     {
@@ -16,9 +16,8 @@ class CreateBannerRequest extends BaseFormRequest
     public function translationRules()
     {
         return [
-            'title' => 'required',
-            'description' => 'required',
-            // 'medias_single*image_banner' => 'required'
+            'name' => 'required',
+            'slug' => 'required',
         ];
     }
 

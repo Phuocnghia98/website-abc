@@ -26,8 +26,10 @@ return [
         'status' => 'Trạng thái'
     ],
     'messages' => [
+        
     ],
     'validation' => [
+        'error_image' => 'Ảnh banner phải bắt buộc !!'
     ],
     'status' => [
         'enable' => 'Hoạt động',
