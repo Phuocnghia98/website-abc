@@ -18,9 +18,9 @@
      
             {!! Form::i18nTextarea('content', 'Content', $errors, $lang,$course) !!}
             
-            {!! Form::i18nCheckbox('status', 'Status', $errors, $lang,$course) !!}
+            {!! Form::normalCheckbox('status', 'Status', $errors,$course) !!}
           
-
+            
 
         </div>
         <div class="col-lg-2">

@@ -12,7 +12,7 @@ use Modules\Course\Repositories\CourseCateRepository;
 use Modules\Course\Repositories\TeacherRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Course\Entities\CourseCate;
-
+use Mcamara\LaravelLocalization\LaravelLocalization;
 class CourseController extends AdminBaseController
 {
     /**
@@ -96,7 +96,7 @@ class CourseController extends AdminBaseController
      */
     public function update(Course $course, UpdateCourseRequest $request)
     {
-     //dd($request->all());
+        //dd($request->all());
         $this->course->update($course, $request->all());
 
         return redirect()->route('admin.course.course.index')
