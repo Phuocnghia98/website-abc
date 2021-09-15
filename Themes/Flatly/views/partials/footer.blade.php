@@ -2,7 +2,7 @@
     <div id="particles-footer" class="particles"></div>
     <div class="container-footer">
         <div class="footer__logo">
-            <img src="assets/images/logo.png" alt=""/>
+            <img src="{!!url('assets/images/logo.png ')!!}" alt=""/>
         </div>
         <div class="footer__info container-fluid">
             <div class="row">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="map-footer">
-                        <img src="assets/images/map.jpg" alt=""/>
+                        <img src="{!!url('assets/images/map.jpg')!!}" alt=""/>
                     </div>
                 </div>
             </div>

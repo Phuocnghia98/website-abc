@@ -6,4 +6,5 @@ use Modules\Core\Repositories\BaseRepository;
 
 interface CourseRepository extends BaseRepository
 {
+    
 }

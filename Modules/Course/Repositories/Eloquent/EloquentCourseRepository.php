@@ -7,6 +7,7 @@ use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 use Modules\Course\Events\CourseWasCreated;
 use Modules\Course\Events\CourseWasUpdated;
 use Modules\Course\Events\CourseWasDeleted;
+use SebastianBergmann\CodeCoverage\Node\Builder;
 class EloquentCourseRepository extends EloquentBaseRepository implements CourseRepository
 {
     public function update($course, $data)
@@ -20,7 +21,8 @@ class EloquentCourseRepository extends EloquentBaseRepository implements CourseR
 
         return $course;
     }
-
+ 
+    
     /**
      * Create a blog post
      * @param  array $data

@@ -23,7 +23,12 @@
     @show
     @stack('css-stack')
     @stack('translation-stack')
-
+<style>
+    .table > tbody > tr > td {
+    vertical-align: middle;
+    
+}
+</style>
     <script>
         $.ajaxSetup({
             headers: { 'Authorization': 'Bearer {{ $currentUser->getFirstApiKey() }}' }

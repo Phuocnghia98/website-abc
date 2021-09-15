@@ -21,9 +21,9 @@ class PublicController extends BasePublicController
 }
     public function index()
     {
-        $courses = $this->course->allTranslatedIn(App::getLocale());
-
-        return view('blog.index', compact('courses'));
+        $courses = $this->course->allactive(App::getLocale());
+      // dd($courses);
+        return view('course.index', compact('courses'));
     }
 
     /**
