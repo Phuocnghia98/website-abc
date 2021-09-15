@@ -22,6 +22,7 @@ interface BaseRepository
      */
     public function all();
 
+    public function allactive($lang);
     /**
      * @return Builder
      */
