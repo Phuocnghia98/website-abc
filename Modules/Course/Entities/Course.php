@@ -24,8 +24,7 @@ class Course extends Model
         return $thumbnail;
     }
     public function Catename(){
-        //  return $this->hasOne(CourseCateTranslation::class,'course_cate_id','course_cates_id');
-        return $this->belongsToMany(CourseCateTranslation::class, 'course__course_translations', 'course_id', 'course_cates_id');
+          return $this->hasOne(CourseCateTranslation::class,'course_cate_id','course_cates_id');
       }
   
 }

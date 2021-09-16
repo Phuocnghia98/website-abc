@@ -81,6 +81,7 @@ class CourseCateController extends AdminBaseController
      */
     public function update(CourseCate $coursecate, UpdateCourseCateRequest $request)
     {
+       // dd($request->all());
         $this->coursecate->update($coursecate, $request->all());
 
         return redirect()->route('admin.course.coursecate.index')

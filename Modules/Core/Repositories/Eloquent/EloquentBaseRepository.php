@@ -50,6 +50,13 @@ abstract class EloquentBaseRepository implements BaseRepository
         return $this->model->orderBy('created_at', 'DESC')->get();
     }
 
+    public function allactive($lang)
+    {
+        return $this->model->whereHas('translations', function (Builder $q) use ($lang) {
+            $q->where('status', 1)->where('locale', "$lang");
+        })->with('translations')->orderBy('created_at', 'DESC')->get();
+    }
+
     /**
      * @inheritdoc
      */

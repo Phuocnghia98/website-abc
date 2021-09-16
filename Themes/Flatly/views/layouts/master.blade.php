@@ -7,12 +7,12 @@
     @show
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@section('title')@setting('core::site-name')@show</title>
-    @foreach($alternate as $alternateLocale=>$alternateSlug)
+    {{-- @foreach($alternate as $alternateLocale=>$alternateSlug)
         <link rel="alternate" hreflang="{{$alternateLocale}}" href="{{url($alternateLocale.'/'.$alternateSlug)}}">
-    @endforeach
+    @endforeach --}}
     <link rel="canonical" href="{{url()->current()}}" />
     <link rel="shortcut icon" href="{{ Theme::url('favicon.ico') }}">
-    <!-- {!! Theme::style('css/main.css') !!} -->
+     {{-- {!! Theme::style('css/main.css') !!}  --}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,8 +48,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer data-deferred="1"></script>
-<script src="{{ asset('themes/flatly/js/home.js') }}"></script>
-
+{!! Theme::script('js/home.js') !!}
 @stack('js-stack')
 </body>
 </html>

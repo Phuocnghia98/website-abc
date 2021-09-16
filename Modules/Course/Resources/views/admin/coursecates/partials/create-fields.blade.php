@@ -16,4 +16,5 @@
   
 </div>
 {!! Form::i18nCheckbox('status', 'Status', $errors, $lang) !!}
+
 </div>
