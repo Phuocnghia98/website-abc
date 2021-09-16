@@ -11,6 +11,7 @@ use Modules\News\Repositories\NewsRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\News\Entities\News_categories;
 use Modules\User\Entities\Sentinel\User;
+use Illuminate\Support\Facades\App;
 
 class NewsController extends AdminBaseController
 {
@@ -34,9 +35,7 @@ class NewsController extends AdminBaseController
     public function index()
     {
         $news = $this->news->all();
-        $news_cat = News_categories::all();
-        $users = User::all();
-        return view('news::admin.news.index', compact('news','news_cat','users'));
+        return view('news::admin.news.index', compact('news'));
     }
 
     /**
@@ -46,7 +45,6 @@ class NewsController extends AdminBaseController
      */
     public function create()
     {
-       
         $news_cat = News_categories::all();
         $arr_news_cat=array();
         foreach($news_cat as $value) {

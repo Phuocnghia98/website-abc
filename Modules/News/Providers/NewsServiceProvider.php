@@ -7,6 +7,7 @@ use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Core\Events\BuildingSidebar;
 use Modules\Core\Events\LoadingBackendTranslations;
 use Modules\News\Events\Handlers\RegisterNewsSidebar;
+use Modules\News\Composers\NewsComposer;
 
 class NewsServiceProvider extends ServiceProvider
 {
@@ -35,6 +36,7 @@ class NewsServiceProvider extends ServiceProvider
 
 
         });
+        view()->composer('home', NewsComposer::class);
     }
 
     public function boot()

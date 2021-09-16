@@ -65,30 +65,10 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <?php if (isset($users)): ?>
-                                    <?php foreach ($users as $value): 
-                                        if($value['id'] == $news->user_id):
-                                    ?>
-                                        {{ $value->last_name }} {{$value->first_name}}
-                                    <?php   
-                                        break;
-                                        endif;
-                                        endforeach; 
-                                        endif;
-                                    ?>
+                                {{ $news->getUser->last_name.' '.$news->getUser->first_name}}       
                                 </td>
                                 <td>
-                                    <?php if (isset($news_cat)): ?>
-                                    <?php foreach ($news_cat as $value): 
-                                        if($value['id'] == $news->cat_id):
-                                    ?>
-                                        {{ $value->name }}
-                                    <?php   
-                                        break;
-                                        endif;
-                                        endforeach; 
-                                        endif;
-                                    ?>
+                                  {{ $news->getNewsCat->name }}
                                 </td>
 
                                 <td>

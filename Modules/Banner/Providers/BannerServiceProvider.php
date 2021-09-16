@@ -2,6 +2,7 @@
 
 namespace Modules\Banner\Providers;
 
+use Modules\Banner\Composers\BannerComposer;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Core\Events\BuildingSidebar;
@@ -33,6 +34,7 @@ class BannerServiceProvider extends ServiceProvider
             // append translations
 
         });
+        view()->composer('home', BannerComposer::class);
     }
 
     public function boot()

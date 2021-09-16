@@ -6,4 +6,8 @@ use Modules\Core\Repositories\BaseRepository;
 
 interface NewsRepository extends BaseRepository
 {
+    /**
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function showlimit3($lang);
 }
