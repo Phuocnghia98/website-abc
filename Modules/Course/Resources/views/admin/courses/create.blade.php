@@ -24,6 +24,7 @@
                         <div class="tab-pane {{ locale() == $locale ? 'active' : '' }}" id="tab_{{ $i }}">
                             @include('course::admin.courses.partials.create-fields', ['lang' => $locale])
                         </div>
+                    
                     @endforeach
 
                     <div class="box-footer">

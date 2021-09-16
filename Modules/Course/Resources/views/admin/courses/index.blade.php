@@ -35,7 +35,7 @@
                                 <th>{{ trans('course::courses.table.description') }}</th>
                                 <th>{{ trans('course::courses.table.price') }}</th>
                                 <th>{{ trans('course::courses.table.status') }}</th>
-                                
+                                <th>{{ trans('course::courses.table.course_cates_id') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>
@@ -43,6 +43,8 @@
                             <tbody>
                             <?php if (isset($courses)): ?>
                             <?php foreach ($courses as $course): ?>
+
+                          
                             <tr>
                                 <td>
                                     <a href="{{ route('admin.course.course.edit', [$course->id]) }}">
@@ -85,7 +87,11 @@
                                         @endif
                                     </a>
                                 </td>
-                               
+                                <td>
+                                    <a href="{{ route('admin.course.course.edit', [$course->id]) }}">
+                                        {{ $course->Catename->name}}
+                                    </a>
+                                </td>
                                 <td>
                                     <a href="{{ route('admin.course.course.edit', [$course->id]) }}">
                                         {{ $course->created_at }}

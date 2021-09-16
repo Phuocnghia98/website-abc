@@ -31,8 +31,8 @@
                             <tr>
                                 <th>{{ trans('course::coursecates.table.name') }}</th>
                                 <th>{{ trans('course::coursecates.table.slug') }}</th>
-                                <th>{{ trans('course::coursecates.table.description') }}</th>
                                 <th>{{ trans('course::coursecates.table.status') }}</th>
+                                <th>{{ trans('course::coursecates.table.description') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>
@@ -63,7 +63,7 @@
 
                                 <td>
                                     <a href="{{ route('admin.course.coursecate.edit', [$coursecate->id]) }}">
-                                        {{ $coursecate->description }}
+                                        {{   str_limit($coursecate->description, $limit = 30) }}...
                                     </a>
                                 </td>
 
@@ -86,8 +86,8 @@
                             <tr>
                                 <th>{{ trans('course::coursecates.table.name') }}</th>
                                 <th>{{ trans('course::coursecates.table.slug') }}</th>
-                                <th>{{ trans('course::coursecates.table.description') }}</th>
                                 <th>{{ trans('course::coursecates.table.status') }}</th>
+                                <th>{{ trans('course::coursecates.table.description') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>

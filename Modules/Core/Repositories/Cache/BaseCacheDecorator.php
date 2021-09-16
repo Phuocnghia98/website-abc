@@ -58,6 +58,15 @@ abstract class BaseCacheDecorator implements BaseRepository
         });
     }
 
+    public function allactive($lang)
+    {
+        return $this->remember(function () use ($lang) {
+            return $this->repository->allactive($lang);
+        });
+    }
+
+  
+
     /**
      * @inheritdoc
      */
@@ -67,6 +76,8 @@ abstract class BaseCacheDecorator implements BaseRepository
             return $this->repository->allWithBuilder();
         });
     }
+
+   
 
     /**
      * @inheritdoc
