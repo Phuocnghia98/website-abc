@@ -11,7 +11,7 @@
             <ul class="menu__pc">
                 <li class="menu__pc--item"><a href="/" style="color: #1b1a13;">Trang chủ</a></li>
                 <li class="menu__pc--item"><a href="#">Giới thiệu</a></li>
-                <li class="menu__pc--item d-none d-xl-block"><a href="#">Đào tạo</a></li>
+                <li class="menu__pc--item d-none d-xl-block"><a href="{{ URL::route($currentLocale . '.course') }}">Đào tạo</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Nghiên cứu</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Tin tức</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Sự kiện</a></li>

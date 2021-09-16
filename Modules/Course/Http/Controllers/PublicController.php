@@ -39,7 +39,7 @@ class PublicController extends BasePublicController
     {
         $course=$this->course->findBySlug($slug);
       //  dd($course);
-        return view('blog.show',compact('course'));
+        return view('course.show',compact('course'));
     }
 
 

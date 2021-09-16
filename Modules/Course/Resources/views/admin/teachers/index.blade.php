@@ -33,7 +33,6 @@
                                 <th>{{ trans('course::teachers.table.email') }}</th>
                                 <th>{{ trans('course::teachers.table.phone') }}</th>
                                 <th>{{ trans('course::teachers.table.address') }}</th>
-                                <th>{{ trans('course::teachers.table.coursetotal') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>
@@ -41,7 +40,7 @@
                             <tbody>
                             <?php if (isset($teachers)): ?>
                             <?php foreach ($teachers as $teacher): ?>
-                           
+                          {{-- {{($teacher->course->name)}} --}}
                             <tr>
                                 <td>
                                     <a href="{{ route('admin.course.teacher.edit', [$teacher->id]) }}">
@@ -61,11 +60,6 @@
                                 <td>
                                     <a href="{{ route('admin.course.teacher.edit', [$teacher->id]) }}">
                                         {{ $teacher->address }}
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('admin.course.teacher.edit', [$teacher->id]) }}">
-                                        {{count($teacher->course)}}
                                     </a>
                                 </td>
                             
@@ -90,7 +84,6 @@
                                 <th>{{ trans('course::teachers.table.email') }}</th>
                                 <th>{{ trans('course::teachers.table.phone') }}</th>
                                 <th>{{ trans('course::teachers.table.address') }}</th>
-                                <th>{{ trans('course::teachers.table.coursetotal') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>

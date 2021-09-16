@@ -43,8 +43,6 @@
                             <tbody>
                             <?php if (isset($courses)): ?>
                             <?php foreach ($courses as $course): ?>
-
-                          
                             <tr>
                                 <td>
                                     <a href="{{ route('admin.course.course.edit', [$course->id]) }}">

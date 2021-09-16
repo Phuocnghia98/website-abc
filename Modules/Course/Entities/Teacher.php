@@ -12,7 +12,7 @@ class Teacher extends Model
     protected $table = 'course__teachers';
     public $translatedAttributes = ['name','email','address','infor','phone'];
     protected $fillable = ['name','email','address','infor','phone'];
-   public function course(){
-       return $this->hasMany(CourseTranslation::class,'teacher_id','id');
-   }
+    public function course(){
+        return $this->hasMany(CourseTranslation::class,'teacher_id','id');
+    }
 }

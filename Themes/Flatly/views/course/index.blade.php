@@ -46,7 +46,7 @@
                             <button><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
                         </div>
                         <div class="content-course">
-                            <h5>{{$course->title }}</h5>
+                            <h5><a href="{{ URL::route($currentLocale . '.course.slug', [$course->slug]) }}">{{$course->title }}</a> </h5>
                             <hr>
                             <div class="d-flex align-items-center justify-content-between mb-2">
                                 <span class="time-course"><i class="fa fa-clock-o" aria-hidden="true"></i> 8 Hour</span>

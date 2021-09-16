@@ -19,10 +19,10 @@ class CreateCourseCourseCateTranslationsTable extends Migration
             $table->string('slug');
             $table->string('description')->nullable();
             $table->boolean('status')->default(0);
-            $table->integer('coursecate_id')->unsigned();
+            $table->integer('course_cates_id')->unsigned();
             $table->string('locale')->index();
-            $table->unique(['coursecate_id', 'locale']);
-            $table->foreign('coursecate_id')->references('id')->on('course__coursecates')->onDelete('cascade');
+            $table->unique(['course_cates_id', 'locale']);
+            $table->foreign('course_cates_id')->references('id')->on('course__coursecates')->onDelete('cascade');
         });
     }
 
