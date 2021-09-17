@@ -31,7 +31,7 @@ class TeacherController extends AdminBaseController
      */
     public function index()
     {
-        $teachers = $this->teacher->allTranslatedIn(app()->getLocale());
+        $teachers = $this->teacher->paginate(10);
         return view('course::admin.teachers.index', compact('teachers'));
     }
 
