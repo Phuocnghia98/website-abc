@@ -31,7 +31,7 @@ class BannerController extends AdminBaseController
      */
     public function index()
     {
-        $banners = $this->banner->all();
+        $banners = $this->banner->paginate(15);
 
         return view('banner::admin.banners.index', compact('banners'));
     }
@@ -54,15 +54,8 @@ class BannerController extends AdminBaseController
      */
     public function store(CreateBannerRequest $request)
     {
-        $credentials_option= $request->all();
-        if($credentials_option['medias_single']['image_banner']==null) {
-            return back()->withErrors([
-                'message' => "Image required"
-            ]);
-        }
-       
+        $this->banner->checkImageInput($request->all());
         $this->banner->create($request->all());
-
         return redirect()->route('admin.banner.banner.index')
             ->withSuccess(trans('core::core.messages.resource created', ['name' => trans('banner::banners.title.banners')]));
     }
@@ -87,12 +80,8 @@ class BannerController extends AdminBaseController
      */
     public function update(Banner $banner, UpdateBannerRequest $request)
     {
-        $credentials_option= $request->all();
-        if($credentials_option['medias_single']['image_banner']==null) {
-            return back()->withErrors([
-                'message' => "Image required"
-            ]);
-        }
+        $this->banner->checkImageInput($request->all());
+        
         $this->banner->update($banner, $request->all());
         
         return redirect()->route('admin.banner.banner.index')

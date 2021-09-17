@@ -8,21 +8,14 @@ use Modules\News\Events\NewsWasCreated;
 use Modules\News\Events\NewsWasUpdated;
 use Modules\News\Events\NewsWasDeleted;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Builder;
+use Modules\News\Entities\News;
+use Modules\News\Entities\News_categories;
+use Modules\News\Entities\News_categoriesTranslation;
+use Modules\User\Entities\Sentinel\User;
+
 class EloquentNewsRepository extends EloquentBaseRepository implements NewsRepository
 {
-    public function all() {
-       
-        if (method_exists($this->model, 'translations')) {
-            return $this->model->with('translations')
-            // ->join('users', 'news__news_translations.user_id', '=', 'users.id')
-            // ->join('news__news_categories_translations', 'news__news_translations.cat_id', '=', 'news__news_categories_translations.news_categories_id')
-            ->orderBy('created_at', 'DESC')->get();
-            
-        }
-        
-        return $this->model->orderBy('created_at', 'DESC')->get();
-    }
-
     public function create($data)
     {
         $user_id = Auth::user()->id;
@@ -59,5 +52,32 @@ class EloquentNewsRepository extends EloquentBaseRepository implements NewsRepos
         event(new NewsWasDeleted($news));
 
         return $news->delete();
+    }
+    public function showlimit3($lang)
+    {
+        return  $this->model->whereHas('translations', function (Builder $q) use ($lang) {
+            $q->where('locale', "$lang");
+        })->with('translations')->orderBy('created_at', 'DESC')->take(3)->get();
+    }
+    public function getArrNewsCat() {
+        $news_cat = News_categories::all();
+        $arr_news_cat=array();
+        foreach($news_cat as $value) {
+            $arr_news_cat[$value->id] = $value->name;
+        }
+        return $arr_news_cat;
+    }
+    public function checkValidateImage($data)
+    {
+        if($data['medias_single']['image_news']==null) {
+            return back()->withErrors([
+                'message' => "Image required"
+            ]);
+        }
+    }
+    public function getNewsCatLimit10()
+    {
+        return News_categories::take(10)->get();
+
     }
 }

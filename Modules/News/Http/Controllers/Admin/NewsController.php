@@ -9,8 +9,6 @@ use Modules\News\Http\Requests\CreateNewsRequest;
 use Modules\News\Http\Requests\UpdateNewsRequest;
 use Modules\News\Repositories\NewsRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
-use Modules\News\Entities\News_categories;
-use Modules\User\Entities\Sentinel\User;
 
 class NewsController extends AdminBaseController
 {
@@ -33,10 +31,8 @@ class NewsController extends AdminBaseController
      */
     public function index()
     {
-        $news = $this->news->all();
-        $news_cat = News_categories::all();
-        $users = User::all();
-        return view('news::admin.news.index', compact('news','news_cat','users'));
+        $news = $this->news->paginate(15);
+        return view('news::admin.news.index', compact('news'));
     }
 
     /**
@@ -46,12 +42,7 @@ class NewsController extends AdminBaseController
      */
     public function create()
     {
-       
-        $news_cat = News_categories::all();
-        $arr_news_cat=array();
-        foreach($news_cat as $value) {
-            $arr_news_cat[$value->id] = $value->name;
-        }
+        $arr_news_cat = $this->news->getArrNewsCat();
         return view('news::admin.news.create', compact('arr_news_cat'));
     }
 
@@ -63,12 +54,7 @@ class NewsController extends AdminBaseController
      */
     public function store(CreateNewsRequest $request)
     {
-        $credentials_option= $request->all();
-        if($credentials_option['medias_single']['image_news']==null) {
-            return back()->withErrors([
-                'message' => "Image required"
-            ]);
-        }
+        $this->news->checkValidateImage($request->all());
         $this->news->create($request->all());
 
         return redirect()->route('admin.news.news.index')
@@ -83,11 +69,7 @@ class NewsController extends AdminBaseController
      */
     public function edit(News $news)
     {
-        $news_cat = News_categories::all();
-        $arr_news_cat=array();
-        foreach($news_cat as $value) {
-            $arr_news_cat[$value->id] = $value->name;
-        }
+        $arr_news_cat = $this->news->getArrNewsCat();
         return view('news::admin.news.edit', compact('news','arr_news_cat'));
     }
 
@@ -100,12 +82,7 @@ class NewsController extends AdminBaseController
      */
     public function update(News $news, UpdateNewsRequest $request)
     {
-        $credentials_option= $request->all();
-        if($credentials_option['medias_single']['image_news']==null) {
-            return back()->withErrors([
-                'message' => "Image required"
-            ]);
-        }
+        $this->news->checkValidateImage($request->all());
         $this->news->update($news, $request->all());
 
         return redirect()->route('admin.news.news.index')
