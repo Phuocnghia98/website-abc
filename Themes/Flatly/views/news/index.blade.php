@@ -31,7 +31,7 @@ Course
                         <img src="assets/images/course3.jpg" alt="" />
                     </div>
                     <div class="content-blog">
-                        <a href="#"><h5>{{$value->title}}</h5></a>
+                        <a href=" {{ route($currentLocale.'.news.slug', $value->slug) }}"><h5>{{$value->title}}</h5></a>
                         <div class="info-blog">
                             <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{$value->created_at}}</span>
                             <span><i class="fa fa-user" aria-hidden="true"></i>{{ $value->getUser->last_name.' '.$value->getUser->first_name}}</span>

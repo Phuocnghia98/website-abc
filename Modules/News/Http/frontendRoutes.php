@@ -13,5 +13,3 @@ $router->group(['prefix' =>'/news'], function (Router $router) {
         'uses' => 'PublicController@detail'
     ]);
 });
-
-// get('news', ['uses' => 'PublicController@index', 'as' => 'news.index']);

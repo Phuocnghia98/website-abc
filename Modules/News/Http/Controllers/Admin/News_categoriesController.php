@@ -31,7 +31,7 @@ class News_categoriesController extends AdminBaseController
      */
     public function index()
     {
-        $news_categories = $this->news_categories->all();
+        $news_categories = $this->news_categories->paginate(15);
 
         return view('news::admin.news_categories.index', compact('news_categories'));
     }

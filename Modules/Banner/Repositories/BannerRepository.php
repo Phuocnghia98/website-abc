@@ -10,4 +10,5 @@ interface BannerRepository extends BaseRepository
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function showAll($lang);
+    public function checkImageInput($data);
 }

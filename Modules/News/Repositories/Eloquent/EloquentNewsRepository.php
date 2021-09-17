@@ -59,4 +59,25 @@ class EloquentNewsRepository extends EloquentBaseRepository implements NewsRepos
             $q->where('locale', "$lang");
         })->with('translations')->orderBy('created_at', 'DESC')->take(3)->get();
     }
+    public function getArrNewsCat() {
+        $news_cat = News_categories::all();
+        $arr_news_cat=array();
+        foreach($news_cat as $value) {
+            $arr_news_cat[$value->id] = $value->name;
+        }
+        return $arr_news_cat;
+    }
+    public function checkValidateImage($data)
+    {
+        if($data['medias_single']['image_news']==null) {
+            return back()->withErrors([
+                'message' => "Image required"
+            ]);
+        }
+    }
+    public function getNewsCatLimit10()
+    {
+        return News_categories::take(10)->get();
+
+    }
 }

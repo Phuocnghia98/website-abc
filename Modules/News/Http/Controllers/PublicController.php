@@ -4,6 +4,8 @@ use Modules\Core\Http\Controllers\BasePublicController;
 use Modules\News\Repositories\NewsRepository;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\News\Entities\News_categories;
+
 class PublicController extends BasePublicController {
 
     private $news;
@@ -21,6 +23,7 @@ class PublicController extends BasePublicController {
     public function detail($slug)
     {
         $news=$this->news->findBySlug($slug);
-        return view('news.detail',compact('news'));
+        $news_cat= $this->news->getNewsCatLimit10();
+        return view('news.detail',compact('news', 'news_cat'));
     }
 }

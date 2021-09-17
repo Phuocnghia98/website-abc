@@ -40,4 +40,12 @@ class EloquentBannerRepository extends EloquentBaseRepository implements BannerR
             $q->where('status', 1)->where('locale', "$lang");
         })->with('translations')->orderBy('created_at', 'DESC')->get();
     }
+    public function checkImageInput($data)
+    {
+        if($data['medias_single']['image_banner']==null) {
+            return back()->withErrors([
+                'message' => "Image required"
+            ]);
+        }
+    }
 }
