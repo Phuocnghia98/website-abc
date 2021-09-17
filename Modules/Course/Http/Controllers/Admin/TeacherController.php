@@ -31,8 +31,7 @@ class TeacherController extends AdminBaseController
      */
     public function index()
     {
-        $teachers = $this->teacher->all();
-
+        $teachers = $this->teacher->paginate(10);
         return view('course::admin.teachers.index', compact('teachers'));
     }
 

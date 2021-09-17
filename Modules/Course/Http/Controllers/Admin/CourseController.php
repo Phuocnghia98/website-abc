@@ -40,8 +40,7 @@ class CourseController extends AdminBaseController
      */
     public function index()
     {
-        $courses = $this->course->all();
-      //  dd($courses);
+        $courses = $this->course->allTranslatedIn(app()->getLocale());
         return view('course::admin.courses.index', compact('courses'));
     }
 

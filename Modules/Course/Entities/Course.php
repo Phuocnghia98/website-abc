@@ -26,5 +26,8 @@ class Course extends Model
     public function Catename(){
           return $this->hasOne(CourseCateTranslation::class,'course_cate_id','course_cates_id');
       }
+      public function teacher(){
+        return $this->hasOne(TeacherTranslation::class,'teacher_id','teacher_id');
+    }
   
 }
