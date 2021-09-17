@@ -22,7 +22,6 @@ class PublicController extends BasePublicController
     public function index()
     {
         $courses = $this->course->allactive(App::getLocale());
-      // dd($courses);
         return view('course.index', compact('courses'));
     }
 
@@ -38,7 +37,6 @@ class PublicController extends BasePublicController
     public function show($slug)
     {
         $course=$this->course->findBySlug($slug);
-      //  dd($course);
         return view('course.show',compact('course'));
     }
 

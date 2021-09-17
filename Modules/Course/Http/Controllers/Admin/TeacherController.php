@@ -32,7 +32,6 @@ class TeacherController extends AdminBaseController
     public function index()
     {
         $teachers = $this->teacher->allTranslatedIn(app()->getLocale());
-
         return view('course::admin.teachers.index', compact('teachers'));
     }
 
