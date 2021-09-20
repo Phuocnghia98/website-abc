@@ -12,6 +12,9 @@ return [
     ],
     'button' => [
         'create news' => 'Create a news',
+        'create' => 'Create',
+        'cancel' => 'Cancel',
+        'update' => 'Update'
     ],
     'table' => [
         'title' => 'Title',

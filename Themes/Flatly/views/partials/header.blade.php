@@ -13,7 +13,7 @@
                 <li class="menu__pc--item"><a href="#">Giới thiệu</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="{{ URL::route($currentLocale . '.course') }}">Đào tạo</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Nghiên cứu</a></li>
-                <li class="menu__pc--item d-none d-xl-block"><a href="#">Tin tức</a></li>
+                <li class="menu__pc--item d-none d-xl-block"><a href="{{ route($currentLocale.'.news') }}">Tin tức</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Sự kiện</a></li>
             
                 <li class="d-block d-xl-none" id="btn-menu-lap"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></li>
@@ -29,7 +29,7 @@
         </nav>
     </div>
     <div class="header__btn ml-3 d-none d-lg-block">
-        <button class="btn-read-more header__btn--bookcall "><i class="fa fa-volume-control-phone" aria-hidden="true"></i>Gọi ngay</button>
+        <button class="btn-read-more header__btn--bookcall "><i class="fa fa-volume-control-phone" aria-hidden="true"></i>{{trans('core::core.button.call-now')}}</button>
     </div>
     <button class="d-block d-lg-none" id="btn-menu-mobile"><i class="fa fa-bars" aria-hidden="true"></i></button>
 </header>

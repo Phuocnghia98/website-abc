@@ -54,9 +54,11 @@
                                     </a>
                                 </td>
                                 <td>
+                                    @if ($news->filesByZone('image_news')->first())
                                     <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
                                         <img src="@thumbnail($news->filesByZone('image_news')->first()->path, 'smallThumb')" alt="News" />
                                     </a>
+                                    @endif
                                 
                                 </td>
                                 <td>
@@ -78,9 +80,15 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews({{$news}},'@thumbnail($news->filesByZone('image_news')->first()->path, 'mediumThumb')')">{{ trans('news::news.table.detail') }}</button>
+                                    @if ($news->filesByZone('image_news')->first())
+                                        <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews(
+                                            {{$news}},'{{ $news->getUser->last_name }}','{{ $news->getNewsCat->name }}','{{$news->files()->first()->path}}' )">{{ trans('news::news.table.detail') }}</button>
+                                    @else
+                                    <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews({{$news}})">{{ trans('news::news.table.detail') }}</button>
+                                    @endif
                                         <a href="{{ route('admin.news.news.edit', [$news->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
                                         <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.news.news.destroy', [$news->id]) }}"><i class="fa fa-trash"></i></button>
+                                  
                                     </div>
                                 </td>
                             </tr>
@@ -190,7 +198,7 @@
         });
     </script>
     <script type="text/javascript">
-        function detailNews(news,path) {
+        function detailNews(news,author,category,path="") {
            let html="";
            html=`
            <div class="news-image">
@@ -201,8 +209,8 @@
             </div>
             <div class="news-info">
                 <span><i class="fa fa-clock-o" aria-hidden="true"></i>${news.created_at}</span>
-                <span><i class="fa fa-user" aria-hidden="true"></i>fdsfd</span>
-                <span><i class="fa fa-book" aria-hidden="true"></i>dsfđf</span>
+                <span><i class="fa fa-user" aria-hidden="true"></i>${author}</span>
+                <span><i class="fa fa-book" aria-hidden="true"></i>${category}</span>
             </div>
             <div class="content">
                 ${news.content}

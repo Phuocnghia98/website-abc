@@ -12,6 +12,9 @@ return [
     ],
     'button' => [
         'create news_categories' => 'Tạo một danh mục tin tức',
+        'create' => 'Tạo',
+        'cancel' => 'Hủy',
+        'update' => 'Cập nhật'
     ],
     'table' => [
         'name' => 'Tên',
