@@ -8,8 +8,8 @@
 @section('content')
 <div class="banner "   style="background-image:url({!!url('assets/images/news_bg_new.jpg') !!});" >
     <div class=" banner-banner ">
-        <h1 class="text-center ">Khóa học</h1>
-        <h4 class="text-center ">Trang chủ / Đào tạo khóa học </h4>
+        <h1 class="text-center ">{{ trans('course::courses.title.courses') }}</h1>
+        <h4 class="text-center ">{{ trans('core::settings.home') }}/ {{ trans('course::courses.title.courses') }} </h4>
     </div>
 </div>
 <section id="course" class="pb-4" style="padding: 0">
@@ -41,7 +41,7 @@
                             @if ($course->files()->first()->path)
                             <img src="{{$course->files()->first()->path}}"/>
                             @endif
-                            <span>FUNDAMENTER LEVER  </span>
+                            <span>{{ trans('course::courses.title.FUNDAMENTER LEVER') }}  </span>
                             <div class="over-black"></div>
                             <button><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
                         </div>

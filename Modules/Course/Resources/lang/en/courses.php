@@ -9,9 +9,12 @@ return [
         'courses' => 'Course',
         'create course' => 'Create a course',
         'edit course' => 'Edit a course',
+        'FUNDAMENTER LEVER' => 'FUNDAMENTER LEVER',
     ],
     'button' => [
         'create course' => 'Create a course',
+        'buy this course' =>'Buy this course',
+        'Leave a comment' =>'Leave a comment',
     ],
     'table' => [
         'image'=> 'Image',
@@ -36,7 +39,13 @@ return [
         'status'=> 'Status',
         'course_cates_id'=> 'Course category',
     ],
+    'frontend' => [
+        'overview' =>'OVERVIEW',
+        'curriculum' =>'CURRICULUM',
+        'instructor' =>'INSTRUCTOR',
+    ],
     'messages' => [
+        
     ],
     'validation' => [
     ],

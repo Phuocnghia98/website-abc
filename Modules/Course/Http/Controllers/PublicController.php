@@ -21,7 +21,7 @@ class PublicController extends BasePublicController
 }
     public function index()
     {
-        $courses = $this->course->allactive(App::getLocale());
+        $courses = $this->course->ShowCourseActive(App::getLocale());
         return view('course.index', compact('courses'));
     }
 

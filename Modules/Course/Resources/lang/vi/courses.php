@@ -9,9 +9,12 @@ return [
         'courses' => 'Khóa học',
         'create course' => 'Tạo khóa học mới',
         'edit course' => 'Chỉnh sửa khóa học',
+        'FUNDAMENTER LEVER' => 'Nền tảng trực tiếp',
     ],
     'button' => [
         'create course' => 'Tạo khóa học mới',
+        'buy this course' =>'Mua khóa học',
+        'Leave a comment' =>'Để lại góp ý',
     ],
     'table' => [
         'image'=> 'Hình ảnh',
@@ -35,6 +38,11 @@ return [
         'teacher_id'=> 'Giáo viên',
         'status'=> 'Trạng thái',
         'course_cates_id'=> 'Danh mục khóa học',
+    ], 
+     'frontend' => [
+        'overview' =>'Tổng quát',
+        'curriculum' =>'Giáo trình',
+        'instructor' =>'Người hướng dẫn',
     ],
     'messages' => [
     ],

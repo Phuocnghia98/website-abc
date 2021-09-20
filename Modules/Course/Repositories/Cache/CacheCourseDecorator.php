@@ -13,4 +13,5 @@ class CacheCourseDecorator extends BaseCacheDecorator implements CourseRepositor
         $this->entityName = 'course.courses';
         $this->repository = $course;
     }
+ 
 }

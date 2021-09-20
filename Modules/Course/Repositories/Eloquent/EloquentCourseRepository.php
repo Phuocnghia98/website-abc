@@ -7,9 +7,10 @@ use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 use Modules\Course\Events\CourseWasCreated;
 use Modules\Course\Events\CourseWasUpdated;
 use Modules\Course\Events\CourseWasDeleted;
-use SebastianBergmann\CodeCoverage\Node\Builder;
+use Illuminate\Database\Eloquent\Builder;
 class EloquentCourseRepository extends EloquentBaseRepository implements CourseRepository
 {
+   
     public function update($course, $data)
     {
         
@@ -54,5 +55,10 @@ class EloquentCourseRepository extends EloquentBaseRepository implements CourseR
      * @param  string                                   $lang
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    
+    public function ShowCourseActive($lang)
+    {
+        return $this->model->whereHas('translations', function (Builder $q) use ($lang) {
+            $q->where('status', 1)->where('locale', "$lang");
+        })->with('translations')->orderBy('created_at', 'DESC')->get();
+    }
 }

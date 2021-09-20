@@ -11,12 +11,33 @@
             <ul class="menu__pc">
                 <li class="menu__pc--item"><a href="/" style="color: #1b1a13;">Trang chủ</a></li>
                 <li class="menu__pc--item"><a href="#">Giới thiệu</a></li>
-                <li class="menu__pc--item d-none d-xl-block"><a href="{{ URL::route($currentLocale . '.course') }}">Đào tạo</a></li>
+                {{-- {{dd($currentLocale)}} --}}
+                <li class="menu__pc--item d-none d-xl-block"><a rel="alternate" lang="{{$currentLocale}}" href="{{ URL::route($currentLocale .'.course') }}">Đào tạo</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Nghiên cứu</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Tin tức</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a href="#">Sự kiện</a></li>
             
                 <li class="d-block d-xl-none" id="btn-menu-lap"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></li>
+                @if(count(LaravelLocalization::getSupportedLocales())>1)
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle " data-toggle="dropdown">
+                    <i class="fa fa-flag"></i>
+                    <span>
+                        {{ LaravelLocalization::getCurrentLocaleName()  }}
+                        <i class="caret"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu language-menu ">
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="{{ App::getLocale() == $localeCode ? 'active' : '' }} menu__pc--item d-none d-xl-block">
+                            <a rel="alternate" lang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+                                {!! $properties['native'] !!}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </li>
+            @endif
                 <li class="list-menu-lap">
                 <ul>
                     <li class=""><a href="#">Đào tạo</a></li>
@@ -25,8 +46,9 @@
                     <li class=""><a href="#">Sự kiện</a></li>
                     </ul>
                 </li>
-            </ul>
+          </ul>  {{--  {!! Menu::get('main') !!} --}}
         </nav>
+       
     </div>
     <div class="header__btn ml-3 d-none d-lg-block">
         <button class="btn-read-more header__btn--bookcall "><i class="fa fa-volume-control-phone" aria-hidden="true"></i>Gọi ngay</button>

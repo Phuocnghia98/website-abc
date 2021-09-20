@@ -40,7 +40,6 @@
                             <tbody>
                             <?php if (isset($teachers)): ?>
                             <?php foreach ($teachers as $teacher): ?>
-                          {{-- {{($teacher->course->name)}} --}}
                             <tr>
                                 <td>
                                     <a href="{{ route('admin.course.teacher.edit', [$teacher->id]) }}">

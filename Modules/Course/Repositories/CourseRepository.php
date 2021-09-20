@@ -6,5 +6,5 @@ use Modules\Core\Repositories\BaseRepository;
 
 interface CourseRepository extends BaseRepository
 {
-    
+    public function ShowCourseActive($lang);
 }

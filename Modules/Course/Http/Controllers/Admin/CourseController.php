@@ -40,7 +40,7 @@ class CourseController extends AdminBaseController
      */
     public function index()
     {
-        $courses = $this->course->allTranslatedIn(app()->getLocale());
+        $courses = $this->course->paginate(10);
         return view('course::admin.courses.index', compact('courses'));
     }
 
@@ -51,10 +51,10 @@ class CourseController extends AdminBaseController
      */
     public function create()
     {
-        $coursecate = $this->coursecate->allactive(App::getLocale());
+        $coursecate = $this->coursecate->ShowCateActive(App::getLocale());
         $teacher=$this->teacher->allTranslatedIn(app()->getLocale());
       
-// dd($coursecate->pluck('id'));
+
         return view('course::admin.courses.create',compact('coursecate','teacher'));
     }
 
