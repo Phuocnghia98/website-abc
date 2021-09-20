@@ -12,6 +12,9 @@ return [
     ],
     'button' => [
         'create news_categories' => 'Create a news_categories',
+        'create' => 'Create',
+        'cancel' => 'Cancel',
+        'update' => 'Update'
     ],
     'table' => [
         'name' => 'Name',

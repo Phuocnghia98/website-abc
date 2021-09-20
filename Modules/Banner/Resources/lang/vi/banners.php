@@ -12,6 +12,9 @@ return [
     ],
     'button' => [
         'create banner' => 'Tạo một banner',
+        'create' => 'Tạo',
+        'cancel' => 'Hủy',
+        'update' => 'Cập nhật'
     ],
     'table' => [
         'title' => 'Tiêu đề',

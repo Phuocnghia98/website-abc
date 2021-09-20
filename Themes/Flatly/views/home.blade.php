@@ -18,7 +18,11 @@
             <div class="">
                 <div class="row">
                     <div class="col-6">
-                        <div class="image-banner"><img src="assets/images/banner2.webp" alt=""/></div>
+                        @if($value->files()->first())
+                        <div class="image-banner"><img src="{{$value->files()->first()->path}}" alt=""/></div>
+                        @else
+                        <div class="image-banner"><img src="{{ asset('assets/images/banner2.webp') }}" alt=""/></div>
+                        @endif
                     </div>
                     <div class="col-6">
                         <div class="info-banner">
@@ -43,12 +47,12 @@
         <div class="contact">
             <div class="d-flex align-items-center justify-content-between p-4">
                 <div class="headding--primary">
-                    <h2>LIÊN HỆ?</h2>
+                    <h2>{{trans('core::core.pages-title.contact')}}?</h2>
                 </div>
                 <form action="" class="d-flex form-contact">
                 <input type="text" placeholder="Name" />
                 <input type="text" placeholder="Telephone number" />
-                <input type="submit" placeholder="Callback" value="Callback" />
+                <input type="submit" placeholder="Callback" value="{{trans('core::core.button.call-now')}}" />
                 </form>
             </div>
             <div class="row contact-info" >
@@ -59,7 +63,7 @@
                     </div>
                     <div class="d-flex align-items-center item__info--title">
                     <i class="fa fa-youtube-play mr-4" aria-hidden="true"></i>
-                        <a href="#">Đào Tạo</a>
+                        <a href="#">{{trans('core::core.pages-title.educate')}}</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 item__info mb-3">
@@ -69,7 +73,7 @@
                 </div>
                 <div class="d-flex align-items-center item__info--title">
                     <i class="fa fa-headphones mr-4" aria-hidden="true"></i>
-                    <a href="#">Nghiên cứu</a>
+                    <a href="#">{{trans('core::core.pages-title.research')}}</a>
                 </div>
             </div>
             <div class="col-12 col-md-4 item__info mb-3">
@@ -79,7 +83,7 @@
                 </div>
                 <div class="d-flex align-items-center item__info--title">
                     <i class="fa fa-book mr-4" aria-hidden="true"></i>
-                    <a href="#">Hợp tác</a>
+                    <a href="#">{{trans('core::core.pages-title.cooperate')}}</a>
                 </div>
             </div>
             </div>
@@ -97,7 +101,7 @@
         <div class="col-12 col-md-7 col-lg-6">
             <div class="info-about">
                 <div class="headding--primary">
-                    <h2>GIỚI THIỆU?</h2>
+                    <h2>{{ trans('core::core.pages-title.about-us')}}</h2>
                 </div>
                 <ul class="lists-info">
                     <li>
@@ -138,8 +142,12 @@
         <div class="col-12 col-md-4">
             <div class="blog">
                 <div class="banner-blog">
-                    <img src="@thumbnail($value->filesByZone('image_news')->first()->path, 'mediumThumb')" alt="Banner" />
-                    <!-- <img src="assets/images/course3.jpg" alt=""/> -->
+                    
+                    @if($value->files()->first())
+                    <img src="{{$value->files()->first()->path}}" />
+                    @else
+                    <img src="{{ asset('assets/images/course3.jpg') }}" />
+                    @endif
                 </div>
                 <div class="content-blog">
                     <a href=" {{ route($currentLocale.'.news.slug', $value->slug) }}"><h5>{{$value->title}}</h5></a>
@@ -160,7 +168,7 @@
 <section id="course">
 <div class="container">
     <div class="headding--primary text-center">
-        <h2>CÁC KHÓA HỌC BLOCKCHAIN</h2>
+        <h2>{{trans('core::core.pages-title.list_course')}}</h2>
     </div>
     <div class="row">
         <div class="col-12 col-md-4">
@@ -219,7 +227,7 @@
         </div>
     </div>
     <div class="text-center mt-5">
-        <button class="btn-read-more">View More</button>
+        <button class="btn-read-more">{{trans('core::core.button.view-more')}}</button>
     </div>
 </div>
 </section>

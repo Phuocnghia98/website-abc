@@ -52,7 +52,9 @@
                                     </a> 
                                 </td>
                                 <td>
-                                    <img src="@thumbnail($banner->filesByZone('image_banner')->first()->path, 'smallThumb')" alt="Banner" />
+                                    @if ($banner->filesByZone('image_banner')->first())
+                                        <img src="@thumbnail($banner->filesByZone('image_banner')->first()->path, 'smallThumb')" alt="Banner" />
+                                    @endif    
                                 </td>
                                 <td>
                                     <span class="label label-{{$banner->status ? 'success' : 'danger'}}">

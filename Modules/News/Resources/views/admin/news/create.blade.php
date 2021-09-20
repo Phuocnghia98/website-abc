@@ -27,8 +27,8 @@
                     @endforeach
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.create') }}</button>
-                        <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.news.news.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
+                        <button type="submit" class="btn btn-primary btn-flat">{{ trans('news::news.button.create') }}</button>
+                        <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.news.news.index')}}"><i class="fa fa-times"></i> {{ trans('news::news.button.cancel') }}</a>
                     </div>
                 </div>
             </div> {{-- end nav-tabs-custom --}}

@@ -9,12 +9,12 @@ Course
     <div class="banner-content">
         <div class="banner-textbox">
             <div class="headding-primary">
-                <h1>Tin tức</h1>
+                <h1>{{ trans('news::news.title.news') }}</h1>
             </div>
             <nav>
                 <ol class="breadcrumb-banner">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">News</a></li>
+                    <li class="breadcrumb-item"><a href="#">{{trans('core::core.pages-title.home')}}</a></li>
+                    <li class="breadcrumb-item"><a href="#">{{ trans('news::news.title.news') }}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{ $news->title }}</li>
                 </ol>
             </nav>
@@ -28,7 +28,11 @@ Course
                 <div class="detail-news">
                     <div class="news_banner">
                         <div class="news_image">
+                            @if($news->files()->first())
                             <img src="{{$news->files()->first()->path}}" />
+                            @else
+                            <img src="{{ asset('assets/images/blog-15-copyright-min.jpg') }}" />
+                            @endif
                         </div>
                         <div class="news_info">
                             <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{ $news->created_at }}</span>
