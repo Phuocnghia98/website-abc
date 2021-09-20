@@ -6,12 +6,22 @@
 {!! Theme::style('css/style.css') !!}
 @endpush
 @section('content')
-<div class="banner "   style="background-image:url({!!url('assets/images/news_bg_new.jpg') !!});" >
-    <div class=" banner-banner ">
-        <h1 class="text-center ">{{ trans('course::courses.title.courses') }}</h1>
-        <h4 class="text-center ">{{ trans('core::settings.home') }}/ {{ trans('course::courses.title.courses') }} </h4>
+<section id="banner">
+    <div id="particles-banner" class="particles"><canvas class="particles-js-canvas-el" width="1803" height="432" style="width: 100%; height: 100%;"></canvas></div>
+    <div class="banner-content">
+        <div class="banner-textbox">
+            <div class="headding-primary">
+                <h1>{{ trans('course::courses.title.courses') }}</h1>
+            </div>
+            <nav>
+                <ol class="breadcrumb-banner">
+                    <li class="breadcrumb-item"><a href="#">{{ trans('core::settings.home') }}</a></li>
+                    <li class="breadcrumb-item"><a href="#">{{ trans('course::courses.title.courses') }}</a></li>
+                </ol>
+            </nav>
+        </div>
     </div>
-</div>
+</section>
 <section id="course" class="pb-4" style="padding: 0">
     <div class="container">
       
