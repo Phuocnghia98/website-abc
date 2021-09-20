@@ -5,6 +5,7 @@ namespace Modules\News\Entities;
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Media\Support\Traits\MediaRelation;
+use Modules\User\Entities\Sentinel\User;
 
 class News extends Model
 {
@@ -33,5 +34,11 @@ class News extends Model
     public function getProfilePictureAttribute()
     {
         return $this->filesByZone('image_news')->first();
+    }
+    public function getUser(){
+        return $this->hasOne(User::class,'id','user_id');
+    }
+    public function getNewsCat() {
+        return $this->hasOne(News_categories::class,'id','cat_id');
     }
 }

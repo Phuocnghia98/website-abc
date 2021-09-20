@@ -7,6 +7,7 @@ use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 use Modules\Banner\Events\BannerWasCreated;
 use Modules\Banner\Events\BannerWasUpdated;
 use Modules\Banner\Events\BannerWasDeleted;
+use Illuminate\Database\Eloquent\Builder;
 
 class EloquentBannerRepository extends EloquentBaseRepository implements BannerRepository
 {
@@ -31,5 +32,20 @@ class EloquentBannerRepository extends EloquentBaseRepository implements BannerR
         event(new BannerWasDeleted($banner));
 
         return $banner->delete();
+    }
+
+    public function showAll($lang) {
+
+        return $this->model->whereHas('translations', function (Builder $q) use ($lang) {
+            $q->where('status', 1)->where('locale', "$lang");
+        })->with('translations')->orderBy('created_at', 'DESC')->get();
+    }
+    public function checkImageInput($data)
+    {
+        if($data['medias_single']['image_banner']==null) {
+            return back()->withErrors([
+                'message' => "Image required"
+            ]);
+        }
     }
 }
