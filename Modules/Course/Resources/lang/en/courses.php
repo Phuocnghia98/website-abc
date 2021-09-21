@@ -10,11 +10,18 @@ return [
         'create course' => 'Create a course',
         'edit course' => 'Edit a course',
         'FUNDAMENTER LEVER' => 'FUNDAMENTER LEVER',
+        'all' => 'ALL',
+        'Sign Up' => 'Sign Up for a Free Trial',
+        'Get a FREE' => 'Get a FREE Trial Session!',
+        'Register ' => 'Register now to see if our online courses are right for you – without any obligation on your part!',
+        'Stock' => 'Stock Market Tips & Tricks',
     ],
     'button' => [
         'create course' => 'Create a course',
         'buy this course' =>'Buy this course',
         'Leave a comment' =>'Leave a comment',
+        'Register' =>'Register',
+        'viewmore' =>'VIEW MORE',
     ],
     'table' => [
         'image'=> 'Image',
@@ -43,6 +50,9 @@ return [
         'overview' =>'OVERVIEW',
         'curriculum' =>'CURRICULUM',
         'instructor' =>'INSTRUCTOR',
+        'name' =>'Name',
+        'email' =>'Email',
+        'message' =>'Message',
     ],
     'messages' => [
         

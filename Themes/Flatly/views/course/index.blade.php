@@ -28,17 +28,16 @@
         <div class="headding--primary text-center">
             <ul class="nav nav-couse pt-5  d-flex flex-row justify-content-center">
                 <li class="nav-item active ">
-                    <a class="nav-link link " href="# ">ALL</a>
+                    <a class="nav-link link " href="{{ URL::route($currentLocale .'.course') }}">{{ trans('course::courses.title.all') }}</a>
                 </li>
-                <li class="nav-item active ">
-                    <a class="nav-link link " href="# ">FUNDAMENTAL LEVEL </a>
-                </li>
-                <li class="nav-item active ">
-                    <a class="nav-link link " href="# "> PRACTICAL </a>
-                </li>
-                <li class="nav-item active ">
-                    <a class="nav-link link " href="# "> WEALTH BUILDING LEVEL </a>
-                </li>
+                @if ($coursecate)
+                    @foreach ($coursecate as $item)
+                    <li class="nav-item active ">
+                        <a class="nav-link link " href="# ">{{$item->name}} </a>
+                    </li>
+                    @endforeach
+                @endif
+              
             </ul>
         </div>
         <div class="row">
@@ -87,18 +86,18 @@
         <div class="col-lg-5 form-wrap ">
             <form action=" " class="form-course card bg-white " style="">
                 <div class="elementor-column-wrap ">
-                    <h2 class="text-center ">Sign Up for a Free Trial</h2>
+                    <h2 class="text-center ">{{ trans('course::courses.title.Sign Up') }}</h2>
                     <br>
                     <div class="form-group ">
-                        <input type="text " name=" " placeholder=" *Name " class="form-control bg-light input-form " id=" ">
+                        <input type="text " name=" " placeholder=" *{{ trans('course::courses.frontend.name') }} " class="form-control bg-light input-form " id=" ">
                     </div>
                     <div class="form-group ">
-                        <input type="text " name=" " placeholder=" *Email " class="form-control bg-light input-form " id=" ">
+                        <input type="text " name=" " placeholder=" *{{ trans('course::courses.frontend.email') }} " class="form-control bg-light input-form " id=" ">
                     </div>
                     <div class="form-group ">
-                        <textarea name="your-message " cols="40 " rows="10 " class="form-control bg-light " placeholder="Message "></textarea> </div>
+                        <textarea name="your-message " cols="40 " rows="10 " class="form-control bg-light " placeholder="{{ trans('course::courses.frontend.message') }} "></textarea> </div>
                     <div class="form-group ">
-                        <input type="submit " class="btn btn-danger col-4" value="Register ">
+                        <input type="submit " class="btn btn-danger col-4" value="{{ trans('course::courses.button.Register') }} ">
                     </div>
 
                 </div>
@@ -108,10 +107,10 @@
             <div class="elementor-column-wrap2  d-flex align-items-center h-100">
 
                 <div class="elementor-time">
-                    <h2 class="text-white title ">Get a FREE Trial Session!
+                    <h2 class="text-white title ">{{ trans('course::courses.title.Get a FREE') }}!
                     </h2>
                     <p class="text-white detail ">
-                        Register now to see if our online courses are right for you – without any obligation on your part!
+                        {{ trans('course::courses.title.Register') }}
                     </p>
                     <div id="countdown">
                         <ul>
@@ -132,7 +131,7 @@
 
 <div class="stock  ">
 <div class=" container ">
-    <h2 class="text-center "> Stock Market Tips & Tricks</h2>
+    <h2 class="text-center ">   {{ trans('course::courses.title.Stock') }}</h2>
 
     <div class="row ">
         <div class="col-sm-6 ">
@@ -198,7 +197,7 @@
     </div>
     <div class="row ">
         <div class="col-12 text-center p-5 ">  
-                        <button class="btn-read-more">View More</button>
+                        <button class="btn-read-more">{{ trans('course::courses.button.viewmore') }}</button>
                     </div>
 
     </div>

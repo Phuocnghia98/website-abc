@@ -10,11 +10,18 @@ return [
         'create course' => 'Tạo khóa học mới',
         'edit course' => 'Chỉnh sửa khóa học',
         'FUNDAMENTER LEVER' => 'Nền tảng trực tiếp',
+        'all' => 'TẤT CẢ',
+        'Sign Up' => 'Đăng ký dùng thử miễn phí',
+        'Get a FREE' => 'Nhận một phiên dùng thử MIỄN PHÍ!',
+        'Register' => 'Đăng ký ngay để xem liệu các khóa học trực tuyến của chúng tôi có phù hợp với bạn hay không - mà bạn không phải chịu bất kỳ nghĩa vụ nào!',
+        'Stock' => 'Mẹo & Thủ thuật Thị trường Chứng khoán',
     ],
     'button' => [
         'create course' => 'Tạo khóa học mới',
         'buy this course' =>'Mua khóa học',
         'Leave a comment' =>'Để lại góp ý',
+        'Register' =>'Đăng ký',
+        'viewmore' =>'Xem thêm',
     ],
     'table' => [
         'image'=> 'Hình ảnh',
@@ -43,6 +50,9 @@ return [
         'overview' =>'Tổng quát',
         'curriculum' =>'Giáo trình',
         'instructor' =>'Người hướng dẫn',
+        'name' =>'Họ tên',
+        'email' =>'Email',
+        'message' =>'Nội dung',
     ],
     'messages' => [
     ],

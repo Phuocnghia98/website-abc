@@ -109,13 +109,13 @@
                             <h2 >{{ trans('course::courses.button.Leave a comment') }}</h2>
                             <br>
                             <div class="form-group ">
-                                <input type="text " name=" " placeholder=" Your Name *" class="form-control bg-light input-form " id=" ">
+                                <input type="text " name=" " placeholder="{{ trans('course::courses.frontend.name') }} *" class="form-control bg-light input-form " id=" ">
                             </div>
                             <div class="form-group ">
-                                <input type="text " name=" " placeholder=" Your Email * " class="form-control bg-light input-form " id=" ">
+                                <input type="text " name=" " placeholder="{{ trans('course::courses.frontend.email') }} * " class="form-control bg-light input-form " id=" ">
                             </div>
                             <div class="form-group ">
-                                <textarea name="your-message " cols="40 " rows="10 " class="form-control bg-light " placeholder="Your Message *"></textarea> </div>
+                                <textarea name="your-message " cols="40 " rows="10 " class="form-control bg-light " placeholder="{{ trans('course::courses.frontend.message') }} *"></textarea> </div>
                             <div class="form-group ">
                                 <input type="submit" class="btn btn-danger col-4" value="{{ trans('course::courses.button.Leave a comment') }}">
                             </div>
