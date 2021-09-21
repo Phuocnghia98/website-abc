@@ -13,7 +13,7 @@ return [
         'all' => 'ALL',
         'Sign Up' => 'Sign Up for a Free Trial',
         'Get a FREE' => 'Get a FREE Trial Session!',
-        'Register ' => 'Register now to see if our online courses are right for you – without any obligation on your part!',
+        'Register' => 'Register now to see if our online courses are right for you – without any obligation on your part!',
         'Stock' => 'Stock Market Tips & Tricks',
     ],
     'button' => [

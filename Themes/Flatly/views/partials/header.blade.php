@@ -8,7 +8,7 @@
     </div>
     <div class="header__nav mx-3 d-none d-lg-block ">
         <nav class="header__nav-pc">
-            {{-- <ul class="menu__pc">
+            <ul class="menu__pc">
                 <li class="menu__pc--item"><a href="/" style="color: #1b1a13;">Trang chủ</a></li>
                 <li class="menu__pc--item"><a href="#">Giới thiệu</a></li>
                 <li class="menu__pc--item d-none d-xl-block"><a rel="alternate" lang="{{$currentLocale}}" href="{{ URL::route($currentLocale .'.course') }}">Đào tạo</a></li>
@@ -25,9 +25,9 @@
                     <li class=""><a href="#">Sự kiện</a></li>
                     </ul>
                 </li>
-          </ul>  --}}  {!! Menu::get('main') !!}
+          </ul> 
         </nav>
-        
+       
     </div>
     <div class="header__btn ml-3 d-none d-lg-block">
         <button class="btn-read-more header__btn--bookcall "><i class="fa fa-volume-control-phone" aria-hidden="true"></i>Gọi ngay</button>
