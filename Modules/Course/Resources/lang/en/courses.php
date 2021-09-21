@@ -53,6 +53,14 @@ return [
         'name' =>'Name',
         'email' =>'Email',
         'message' =>'Message',
+        'day'=>'day',
+        'hour'=>'Hour',
+        'minutes'=>'MINUTES',
+        'seconds'=>'seconds',
+        'title1'=>'Top 5 Tips on Cryptocurrency Trading',
+        'title2'=>'Beginners Guide to Crypto: Coinbase & Offline Wallets',
+        'title3'=>'How to Read Charts for Cryptocurrency',
+        'title4'=>'Crypto Trading Trick to Earn Even More!',
     ],
     'messages' => [
         

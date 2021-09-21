@@ -58,7 +58,7 @@
                             <h5><a href="{{ URL::route($currentLocale . '.course.slug', [$course->slug]) }}">{{$course->title }}</a> </h5>
                             <hr>
                             <div class="d-flex align-items-center justify-content-between mb-2">
-                                <span class="time-course"><i class="fa fa-clock-o" aria-hidden="true"></i> 8 Hour</span>
+                                <span class="time-course"><i class="fa fa-clock-o" aria-hidden="true"></i> 8 {{ trans('course::courses.frontend.hour') }}</span>
                                 <span class="price-course">  @if ( $course->promotion_price)
                                     $ {{ 	number_format($course->promotion_price)  }}
                                     @else
@@ -107,17 +107,17 @@
             <div class="elementor-column-wrap2  d-flex align-items-center h-100">
 
                 <div class="elementor-time">
-                    <h2 class="text-white title ">{{ trans('course::courses.title.Get a FREE') }}!
+                    <h2 class="text-white title ">{{ trans('course::courses.title.Get a FREE') }}
                     </h2>
                     <p class="text-white detail ">
                         {{ trans('course::courses.title.Register') }}
                     </p>
                     <div id="countdown">
                         <ul>
-                            <li><span id="days"></span>days</li>
-                            <li><span id="hours"></span>Hours</li>
-                            <li><span id="minutes"></span>Minutes</li>
-                            <li><span id="seconds"></span>Seconds</li>
+                            <li><span id="days"></span>{{ trans('course::courses.frontend.day') }} </li>
+                            <li><span id="hours"></span>{{ trans('course::courses.frontend.hour') }} </li>
+                            <li><span id="minutes"></span>{{ trans('course::courses.frontend.minutes') }} </li>
+                            <li><span id="seconds"></span>{{ trans('course::courses.frontend.seconds') }} </li>
                         </ul>
                     </div>
 
@@ -143,7 +143,7 @@
             </div>
 
 
-            <h4 class="mt-3 "><a href="# " class="link ">Top 5 Tips on Cryptocurrency Trading</a></h4>
+            <h4 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title1') }}</a></h4>
         </div>
         <div class="col-sm-6 ">
             <div class="video2 ">
@@ -152,7 +152,7 @@
 
 
             </div>
-            <h4 class="mt-3 "><a href="# " class="link ">Beginners Guide to Crypto: Coinbase & Offline Wallets</a></h4>
+            <h4 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title2') }}</a></h4>
         </div>
 
     </div>
@@ -166,21 +166,21 @@
                 <div class="youtube  " id="VXzAJd8UJl8 " src="{!! url('assets/images/courses-5-copyright-min-416x268.jpg')!!} " style="width:100%; height: 100%; "></div>
 
             </div>
-            <h6 class="mt-3 "><a href="# " class="link ">How to Read Charts for Cryptocurrency</a></h6>
+            <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title3') }}</a></h6>
         </div>
         <div class="col-sm-3 ">
             <div class="video ">
                 <div class="youtube  " id="VXzAJd8UJl8 " src="{!! url('assets/images/blog-14-copyright-min-370x208.jpg')!!} " style="width:100%; height: 100% "></div>
 
             </div>
-            <h6 class="mt-3 "><a href="# " class="link ">Crypto Trading Trick to Earn Even More!</a></h6>
+            <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title4') }}</a></h6>
         </div>
         <div class="col-sm-3 ">
             <div class="video ">
                 <div class="youtube  " id="VXzAJd8UJcourses-8-copyright-min.jpg=" src="{!! url('assets/images/blog-14-copyright-min-370x208.jpg ')!!}"  style="width:100%; height: 100% "></div>
 
             </div>
-            <h6 class="mt-3 "><a href="# " class="link ">Top 5 Tips on Cryptocurrency Trading</a></h6>
+            <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title1') }}</a></h6>
         </div>
         <div class="col-sm-3 ">
             <div class="video ">
@@ -189,7 +189,7 @@
             </div>
 
             <a href="# " class="link ">
-                <h6 class="mt-3 "><a href="# " class="link ">Top 5 Tips on Cryptocurrency Trading</a></h6>
+                <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title3') }}</a></h6>
             </a>
 
         </div>
