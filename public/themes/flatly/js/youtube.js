@@ -25,7 +25,7 @@ function getVideo(_class) {
         y.appendChild(c);
         y.onclick = function() {
             var t = document.createElement("iframe");
-            t.setAttribute("src", "https://www.youtube.com/embed/" + this.id + param(this));
+            t.setAttribute("src", "https://www.youtube.com/embed/"+ this.id+param(this));
             t.style.width = this.style.width;
             t.style.height = this.style.height;
             this.parentNode.replaceChild(t, this);
@@ -36,7 +36,7 @@ function getVideo(_class) {
         if (x.getAttribute("data-params") !== null) {
             return x.getAttribute("data-params");
         } else {
-            return "?autoplay=1";
+            return "";
 
         }
     }
