@@ -37,7 +37,7 @@ Course
                         <a href=" {{ route($currentLocale.'.news.slug', $value->slug) }}"><h5>{{$value->title}}</h5></a>
                         <div class="info-blog">
                             <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{$value->created_at}}</span>
-                            <span><i class="fa fa-user" aria-hidden="true"></i>{{ $value->getUser->last_name.' '.$value->getUser->first_name}}</span>
+                            <span><i class="fa fa-user" aria-hidden="true"></i>{{ optional($value->getUser)->last_name.' '.optional($value->getUser)->first_name }}</span>
                             <span><i class="fa fa-commenting-o" aria-hidden="true"></i>0</span>
                         </div>
                         <p>{{$value->description}}

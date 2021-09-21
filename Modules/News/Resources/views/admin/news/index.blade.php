@@ -67,10 +67,10 @@
                                     </a>
                                 </td>
                                 <td>
-                                {{ $news->getUser->last_name.' '.$news->getUser->first_name}}       
+                                {{ optional($news->getUser)->last_name.' '.optional($news->getUser)->first_name }}      
                                 </td>
                                 <td>
-                                  {{ $news->getNewsCat->name }}
+                                  {{ optional($news->getNewsCat)->name }}
                                 </td>
 
                                 <td>
@@ -82,9 +82,9 @@
                                     <div class="btn-group">
                                     @if ($news->filesByZone('image_news')->first())
                                         <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews(
-                                            {{$news}},'{{ $news->getUser->last_name }}','{{ $news->getNewsCat->name }}','{{$news->files()->first()->path}}' )">{{ trans('news::news.table.detail') }}</button>
+                                            {{$news}},'{{ optional($news->getUser)->last_name }}','{{ optional($news->getNewsCat)->name }}','{{$news->files()->first()->path}}' )">{{ trans('news::news.table.detail') }}</button>
                                     @else
-                                    <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews({{$news}})">{{ trans('news::news.table.detail') }}</button>
+                                    <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews({{$news}},'{{ optional($news->getUser)->last_name }}','{{ optional($news->getNewsCat)->name }}')">{{ trans('news::news.table.detail') }}</button>
                                     @endif
                                         <a href="{{ route('admin.news.news.edit', [$news->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
                                         <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.news.news.destroy', [$news->id]) }}"><i class="fa fa-trash"></i></button>
@@ -122,6 +122,9 @@
         .news-image {
             text-align: center;
             width: 100%;
+        }
+        .news-image img {
+            max-width: 100%;
         }
         .news-title h5 {
             font-size: 2rem;

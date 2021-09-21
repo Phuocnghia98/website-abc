@@ -98,6 +98,15 @@ return [
         'educate' => 'Educate',
         'research' => 'Research',
         'cooperate' => 'Cooperate',
-        'home' => 'Home'
+        'home' => 'Home',
+        'categories' => 'Categories',
+        'search' => 'Search'
+    ],
+    'form' => [
+        'search' => 'Search',
+        'name' => 'Name',
+        'phone' => 'Telephone number',
+        'content' => 'Content',
+        'submit' => 'Submit'
     ]
 ];
