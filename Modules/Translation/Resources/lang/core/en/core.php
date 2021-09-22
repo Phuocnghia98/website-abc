@@ -28,6 +28,7 @@ return [
         'swedish' => 'Svenska',
         'korean' => 'Korean',
         'hungarian' => 'Magyar',
+        'vietnamese'=>'Tiếng Việt'
     ],
     'button' => [
         'cancel' => 'Cancel',

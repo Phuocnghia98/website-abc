@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Course\Repositories\CourseRepository;
+use Modules\Course\Repositories\CourseCateRepository;
 use Modules\Core\Http\Controllers\BasePublicController;
 class PublicController extends BasePublicController
 {
@@ -13,16 +14,19 @@ class PublicController extends BasePublicController
      * @return Response
      */
     private $course;
-    public function __construct(CourseRepository $course)
+    private $coursecate;
+    public function __construct(CourseRepository $course,CourseCateRepository $coursecate)
 {
     parent::__construct();
     $this->course = $course;
+    $this->coursecate=$coursecate;
 
 }
     public function index()
     {
-        $courses = $this->course->allactive(App::getLocale());
-        return view('course.index', compact('courses'));
+        $courses = $this->course->ShowCourseActive(App::getLocale());
+        $coursecate=$this->coursecate->ShowCateActive(App::getLocale());
+        return view('course.index', compact('courses','coursecate'));
     }
 
     /**

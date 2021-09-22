@@ -10,6 +10,7 @@
         <nav class="header__nav-pc">
         {!! Menu::get('main') !!}
         </nav>
+       
     </div>
     <div class="header__btn ml-3 d-none d-lg-block">
         <button class="btn-read-more header__btn--bookcall "><i class="fa fa-volume-control-phone" aria-hidden="true"></i>{{trans('core::core.button.call-now')}}</button>
