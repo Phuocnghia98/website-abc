@@ -12,6 +12,9 @@ return [
     ],
     'button' => [
         'create banner' => 'Create a banner',
+        'create' => 'Create',
+        'cancel' => 'Cancel',
+        'update' => 'Update'
     ],
     'table' => [
         'title' => 'Title',

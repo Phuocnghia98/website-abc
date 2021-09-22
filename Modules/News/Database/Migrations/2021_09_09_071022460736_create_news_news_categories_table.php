@@ -12,7 +12,7 @@ class CreateNewsNewsCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('news__news_categories', function (Blueprint $table) {
+        Schema::create('news__newscat', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             // Your fields
@@ -27,6 +27,6 @@ class CreateNewsNewsCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news__news_categories');
+        Schema::dropIfExists('news__newscat');
     }
 }

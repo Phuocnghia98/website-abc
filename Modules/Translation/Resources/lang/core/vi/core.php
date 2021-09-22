@@ -6,10 +6,10 @@ return [
         'confirmation-message' => 'Are you sure you want to delete this record?',
     ],
     'table' => [
-        'created at' => 'Created at',
-        'updated at' => 'Updated at',
+        'created at' => 'Ngày tạo',
+        'updated at' => 'Ngày cập nhật',
         'deleted at' => 'Deleted at',
-        'actions' => 'Actions',
+        'actions' => 'Hành động',
         'thumbnail' => 'Thumbnail',
     ],
     'tab' => [
@@ -28,7 +28,6 @@ return [
         'swedish' => 'Svenska',
         'korean' => 'Korean',
         'hungarian' => 'Magyar',
-        'vietnamese'=>'Tiếng Việt'
     ],
     'button' => [
         'cancel' => 'Cancel',
@@ -39,8 +38,8 @@ return [
         'see' => 'See',
         'visualize' => 'Visualize',
         'update and back' => 'Update and go back',
-        'call-now' => 'Call Now',
-        'view-more' => 'View more'
+        'call-now' => 'Gọi Ngay',
+        'view-more' => 'Xem thêm'
     ],
     'save' => 'Save',
     'confirm' => 'Confirm',
@@ -93,21 +92,21 @@ return [
     'mark as offline' => 'Mark as offline',
     'back to backend' => 'Back to backend',
     'pages-title' => [
-        'list_course' => 'Blockchain courses',
-        'about-us' => 'About us',
-        'contact' => 'Contact',
-        'educate' => 'Educate',
-        'research' => 'Research',
-        'cooperate' => 'Cooperate',
-        'home' => 'Home',
-        'categories' => 'Categories',
-        'search' => 'Search'
+        'list_course' => 'Các khóa học BlockChain',
+        'about-us' => 'Giới thiệu',
+        'contact' => 'Liên hệ',
+        'educate' => 'Đào tạo',
+        'research' => 'Nghiên cứu',
+        'cooperate' => 'Hợp tác',
+        'home' => 'Trang chủ',
+        'categories' => 'Danh mục tin tức',
+        'search' => 'Tìm kiếm'
     ],
     'form' => [
-        'search' => 'Search',
-        'name' => 'Name',
-        'phone' => 'Telephone number',
-        'content' => 'Content',
-        'submit' => 'Submit'
+        'search' => 'Tìm kiếm',
+        'name' => 'Tên',
+        'phone' => 'Số điện thoại',
+        'content' => 'Nội dung',
+        'submit' => 'Gửi'
     ]
 ];

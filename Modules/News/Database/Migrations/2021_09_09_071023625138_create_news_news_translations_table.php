@@ -20,7 +20,7 @@ class CreateNewsNewsTranslationsTable extends Migration
             $table->text('content');
             $table->string('slug');
             $table->tinyInteger('status')->default(1);
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->integer('user_id');
             $table->integer('cat_id');
             $table->integer('news_id')->unsigned();

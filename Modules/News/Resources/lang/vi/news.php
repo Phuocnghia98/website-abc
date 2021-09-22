@@ -12,6 +12,9 @@ return [
     ],
     'button' => [
         'create news' => 'Tạo một tin',
+        'create' => 'Tạo',
+        'cancel' => 'Hủy',
+        'update' => 'Cập nhật'
     ],
     'table' => [
         'title' => 'Tiêu đề',

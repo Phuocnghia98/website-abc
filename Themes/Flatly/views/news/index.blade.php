@@ -9,13 +9,12 @@ Course
     <div class="banner-content">
         <div class="banner-textbox">
             <div class="headding-primary">
-                <h1>Tin tức</h1>
+                <h1>{{ trans('news::news.title.news') }}</h1>
             </div>
             <nav>
                 <ol class="breadcrumb-banner">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Library</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    <li class="breadcrumb-item"><a href="#">{{trans('core::core.pages-title.home')}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ trans('news::news.title.news') }}</li>
                 </ol>
             </nav>
         </div>
@@ -28,13 +27,17 @@ Course
             <div class="col-12 col-md-4">
                 <div class="blog">
                     <div class="banner-blog">
-                        <img src="assets/images/course3.jpg" alt="" />
+                            @if($value->files()->first())
+                            <img src="{{$value->files()->first()->path}}" />
+                            @else
+                            <img src="{{ asset('assets/images/course3.jpg') }}" />
+                            @endif
                     </div>
                     <div class="content-blog">
                         <a href=" {{ route($currentLocale.'.news.slug', $value->slug) }}"><h5>{{$value->title}}</h5></a>
                         <div class="info-blog">
                             <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{$value->created_at}}</span>
-                            <span><i class="fa fa-user" aria-hidden="true"></i>{{ $value->getUser->last_name.' '.$value->getUser->first_name}}</span>
+                            <span><i class="fa fa-user" aria-hidden="true"></i>{{ optional($value->getUser)->last_name.' '.optional($value->getUser)->first_name }}</span>
                             <span><i class="fa fa-commenting-o" aria-hidden="true"></i>0</span>
                         </div>
                         <p>{{$value->description}}
