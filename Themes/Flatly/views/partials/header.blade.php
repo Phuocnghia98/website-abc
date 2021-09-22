@@ -8,28 +8,7 @@
     </div>
     <div class="header__nav mx-3 d-none d-lg-block ">
         <nav class="header__nav-pc">
-<<<<<<< HEAD
-            <ul class="menu__pc">
-                <li class="menu__pc--item"><a href="/" style="color: #1b1a13;">Trang chủ</a></li>
-                <li class="menu__pc--item"><a href="#">Giới thiệu</a></li>
-                <li class="menu__pc--item d-none d-xl-block"><a rel="alternate" lang="{{$currentLocale}}" href="{{ URL::route($currentLocale .'.course') }}">Đào tạo</a></li>
-                <li class="menu__pc--item d-none d-xl-block"><a href="#">Nghiên cứu</a></li>
-                <li class="menu__pc--item d-none d-xl-block"><a href="#">Tin tức</a></li>
-                <li class="menu__pc--item d-none d-xl-block"><a href="#">Sự kiện</a></li>
-            
-                <li class="d-block d-xl-none" id="btn-menu-lap"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></li>
-                <li class="list-menu-lap">
-                <ul>
-                    <li class=""><a href="#">Đào tạo</a></li>
-                    <li class=""><a href="#">Nghiên cứu</a></li>
-                    <li class=""><a href="#">Tin tức</a></li>
-                    <li class=""><a href="#">Sự kiện</a></li>
-                    </ul>
-                </li>
-          </ul> 
-=======
         {!! Menu::get('main') !!}
->>>>>>> 417a70aa9162707af24e6d56f012e33f0e6fafd3
         </nav>
        
     </div>
