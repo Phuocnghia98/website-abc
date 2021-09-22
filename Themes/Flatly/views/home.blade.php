@@ -50,8 +50,8 @@
                     <h2>{{trans('core::core.pages-title.contact')}}?</h2>
                 </div>
                 <form action="" class="d-flex form-contact">
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Telephone number" />
+                <input type="text" placeholder="{{ trans('core::core.form.name') }}" />
+                <input type="text" placeholder="{{ trans('core::core.form.phone') }}" />
                 <input type="submit" placeholder="Callback" value="{{trans('core::core.button.call-now')}}" />
                 </form>
             </div>
@@ -153,7 +153,7 @@
                     <a href=" {{ route($currentLocale.'.news.slug', $value->slug) }}"><h5>{{$value->title}}</h5></a>
                     <div class="info-blog">
                         <span><i class="fa fa-clock-o" aria-hidden="true"></i>{{ $value->created_at }}</span>
-                        <span><i class="fa fa-user" aria-hidden="true"></i>{{ $value->getUser->last_name.' '.$value->getUser->first_name}}</span>
+                        <span><i class="fa fa-user" aria-hidden="true"></i>{{ optional($value->getUser)->last_name.' '.optional($value->getUser)->first_name }}</span>
                         <span><i class="fa fa-commenting-o" aria-hidden="true"></i>0</span>
                     </div>
                     <p>{{ $value->description }}

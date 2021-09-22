@@ -13,5 +13,5 @@ class News_categoriesTranslation extends Model
         'description',
         'slug'
     ];
-    protected $table = 'news__news_categories_translations';
+    protected $table = 'news__newscat_translations';
 }

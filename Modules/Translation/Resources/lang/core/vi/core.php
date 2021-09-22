@@ -98,6 +98,15 @@ return [
         'educate' => 'Đào tạo',
         'research' => 'Nghiên cứu',
         'cooperate' => 'Hợp tác',
-        'home' => 'Trang chủ'
+        'home' => 'Trang chủ',
+        'categories' => 'Danh mục tin tức',
+        'search' => 'Tìm kiếm'
+    ],
+    'form' => [
+        'search' => 'Tìm kiếm',
+        'name' => 'Tên',
+        'phone' => 'Số điện thoại',
+        'content' => 'Nội dung',
+        'submit' => 'Gửi'
     ]
 ];

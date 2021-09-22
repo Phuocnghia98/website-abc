@@ -9,7 +9,7 @@ class News_categories extends Model
 {
     use Translatable;
 
-    protected $table = 'news__news_categories';
+    protected $table = 'news__newscat';
     public $translatedAttributes = [
         'name',
         'status',
