@@ -16,7 +16,7 @@
             </div>
             <nav>
                 <ol class="breadcrumb-banner">
-                    <li class="breadcrumb-item"><a href="#">{{ trans('core::settings.home') }}</a></li>
+                    <li class="breadcrumb-item"><a href="#">{{trans('core::core.pages-title.home')}}</a></li>
                     <li class="breadcrumb-item"><a href="#">{{ trans('course::courses.title.courses') }}</a></li>
                      <li class="breadcrumb-item"><a href="#">{{ $course->title }}</a></li>
                 </ol>
@@ -35,7 +35,7 @@
         </div>
          <div class="row mt-4 mb-4">
             <div class="col-12">
-              <h6>{{ trans('core::settings.home') }}/ {{ trans('course::courses.title.courses') }}/  {{ $course->title }}</h6>
+              <h6>{{trans('core::core.pages-title.home')}}/ {{ trans('course::courses.title.courses') }}/  {{ $course->title }}</h6>
             </div>
          </div>
          <div class="row mt-4 mb-4">

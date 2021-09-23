@@ -2,6 +2,7 @@
 
 namespace Modules\Course\Providers;
 
+use Modules\Course\Composers\CourseComposer;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Core\Events\BuildingSidebar;
@@ -37,6 +38,7 @@ class CourseServiceProvider extends ServiceProvider
 
 
         });
+        view()->composer('home', CourseComposer::class);
     }
 
     public function boot()
