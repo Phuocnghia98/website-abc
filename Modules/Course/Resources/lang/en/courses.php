@@ -51,6 +51,7 @@ return [
         'curriculum' =>'CURRICULUM',
         'instructor' =>'INSTRUCTOR',
         'name' =>'Name',
+        'title' =>'Title',
         'email' =>'Email',
         'message' =>'Message',
         'day'=>'day',

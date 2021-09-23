@@ -179,13 +179,18 @@ h6:hover {
 }
 
 .title {
-    font-size: 69px;
-    font-family: "Exo2";
+    font-size: 59px;
+    font-weight: 900;
+}
+
+.form-wrap {
+    width: 100%;
 }
 
 .form-wrap h2 {
-    font-family: 'titleh';
     font-size: 36px;
+    color: #1b1a13;
+    font-weight: 600;
 }
 
 .stock {
@@ -213,18 +218,34 @@ h6:hover {
 
 .stock h2 {
     font-size: 48px;
-    font-family: titleh;
     margin-bottom: 50px;
+    color: #1b1a13;
+    font-weight: 600;
 }
 
 #countdown ul li {
     border: 1px solid white;
     padding: 10px;
-    width: 112px;
+    width: 100px;
     text-align: center;
     font-weight: 600;
     color: #ffffff;
-    font-family: exo-2;
+}
+
+#days {
+    padding-bottom: 10px;
+}
+
+#hours {
+    padding-bottom: 10px;
+}
+
+#minutes {
+    padding-bottom: 10px;
+}
+
+#seconds {
+    padding-bottom: 10px;
 }
 
 #countdown li {
@@ -279,8 +300,7 @@ h6:hover {
         width: 50%;
     }
     .title {
-        font-size: 28px;
-        font-family: titleh;
+        font-size: 36px;
     }
     .elementor-column-wrap2 {
         padding: 10px;
@@ -356,11 +376,7 @@ h6:hover {
         height: 300px;
     }
     .banner-banner {
-        /* padding-top: 30px; */
         font-size: 30px;
-    }
-    footer {
-        text-align: center;
     }
     .couse_wrap {
         padding: 0 70px;
@@ -386,12 +402,15 @@ h6:hover {
     .contact-from {
         height: auto;
     }
+    .contact-from .container {
+        max-width: 510px;
+    }
     .contact-from .col-lg-5 {
-        width: 78%;
+        width: 100%;
         margin: 0 auto
     }
     .contact-from .col-lg-6 {
-        width: 78%;
+        width: 100%;
         margin: 0 auto
     }
     .btn-p {
@@ -408,14 +427,9 @@ h6:hover {
     }
     .contact-from .col-lg-5 {
         width: 100%;
-        padding: 0 30px;
     }
     .contact-from .col-lg-6 {
         width: 100%;
-        padding: 20px 30px;
-    }
-    footer {
-        text-align: center;
     }
     .banner-banner {
         padding-top: 15%;
@@ -445,17 +459,6 @@ h6:hover {
     .video {
         height: 230px;
     }
-    #navbarSupportedContent {
-        background-color: #1b1a13;
-        padding: 20px;
-    }
-    #navbarSupportedContent a {
-        color: aliceblue;
-    }
-    footer iframe {
-        width: 189px;
-        margin-top: 24px;
-    }
 }
 
 @media screen and (max-width: 423px) {
@@ -477,9 +480,5 @@ h6:hover {
     }
     .stock h2 {
         font-size: 35px;
-    }
-    footer iframe {
-        width: 189px;
-        margin-top: 24px;
     }
 }
