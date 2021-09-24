@@ -1026,7 +1026,7 @@ body {
   .footer .container-footer .footer__info .info-detail ul li {
     margin-bottom: 15px;
   }
-  .footer .container-footer .footer__info .map-footer img {
+  .footer .container-footer .footer__info .map-footer iframe {
     width: 100%;
   }
   @media screen and (max-width: 991px) {

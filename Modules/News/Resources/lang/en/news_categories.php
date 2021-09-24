@@ -31,5 +31,7 @@ return [
     'messages' => [
     ],
     'validation' => [
+        'name' => 'Name is required',
+        'slug' => 'Name is required'
     ],
 ];

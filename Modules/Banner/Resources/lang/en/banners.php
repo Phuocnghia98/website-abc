@@ -32,7 +32,9 @@ return [
        
     ],
     'validation' => [
-        'error_image' => 'Image banner field is required'
+        'error_image' => 'Image banner field is required',
+        'title' => 'Title is required',
+        'description' => 'Description is required'
     ],
     'status' => [
         'enable' => 'Enable',

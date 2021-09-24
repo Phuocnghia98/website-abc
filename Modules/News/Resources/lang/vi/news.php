@@ -40,6 +40,11 @@ return [
     'messages' => [
     ],
     'validation' => [
-        'error_image' => 'Ảnh tin tức phải bắt buộc'
+        'error_image' => 'Ảnh tin tức phải bắt buộc',
+        'title' => 'Bắt buộc nhập tiêu đề',
+        'slug' => 'Bắt buộc nhập slug',
+        'cat_id' => 'Bắt buộc có danh mục',
+        'content' => 'Bắt buộc có nội dung',
+        'image' => 'Bắt buộc có hình ảnh'
     ],
 ];

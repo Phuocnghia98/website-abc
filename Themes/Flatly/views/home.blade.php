@@ -95,7 +95,7 @@
     <div class="row">
         <div class="col-12 col-md-5 col-lg-6">
             <div class="image-phone">
-                <img src="assets/images/phone.webp"/>
+                <img src="{{ asset('assets/images/phone.webp') }}"/>
             </div>
         </div>
         <div class="col-12 col-md-7 col-lg-6">
@@ -129,7 +129,7 @@
 <section id="background-info">
     <div id="particles-info" class="particles"></div>
     <div class="container">
-        <img src="assets/images/image_bg.jpg"/>
+        <img src="{{ asset('assets/images/ai.jpg') }}"/>
     </div>
 </section>
 <section id="news">

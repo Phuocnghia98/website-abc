@@ -48,7 +48,6 @@
 @stop
 
 @push('js-stack')
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $( document ).ready(function() {
             $(document).keypressAction({
@@ -68,13 +67,20 @@
     </script>
     <script>
         $("#formbanner").validate({
-			rules: {
-                "medias_single[image_banner]": {
-                    required: true
-                }
-                
-			}
-		});
-
+            rules: {
+            @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+                "<?= $locale ?>[title]": { required: true},
+                "<?= $locale ?>[description]": { required: true},
+            @endforeach
+                "medias_single[image_banner]": { required: true}
+            },
+            messages: {
+                @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+                "<?= $locale ?>[title]": { required: "<?= trans('banner::banners.validation.title') ?>" },
+                "<?= $locale ?>[description]": { required: "<?= trans('banner::banners.validation.description') ?>"},
+                @endforeach
+                "medias_single[image_banner]": { required: "<?= trans('banner::banners.validation.image') ?>"}
+		    }
+        });
     </script>
 @endpush

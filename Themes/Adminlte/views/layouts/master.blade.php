@@ -116,6 +116,7 @@
         });
     </script>
 <?php endif; ?>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
 @section('scripts')
 @show
 @stack('js-stack')

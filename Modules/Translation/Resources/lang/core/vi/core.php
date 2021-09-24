@@ -100,7 +100,8 @@ return [
         'cooperate' => 'Hợp tác',
         'home' => 'Trang chủ',
         'categories' => 'Danh mục tin tức',
-        'search' => 'Tìm kiếm'
+        'search' => 'Tìm kiếm',
+        'contact-information' => 'Thông tin liên hệ'
     ],
     'form' => [
         'search' => 'Tìm kiếm',
@@ -108,5 +109,9 @@ return [
         'phone' => 'Số điện thoại',
         'content' => 'Nội dung',
         'submit' => 'Gửi'
+    ],
+    'footer' => [
+        'phone' => 'Số điện thoại',
+        'address' => 'Địa chỉ',
     ]
 ];

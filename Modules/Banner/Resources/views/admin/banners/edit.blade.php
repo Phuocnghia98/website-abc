@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['admin.banner.banner.update', $banner->id], 'method' => 'put']) !!}
+    {!! Form::open(['route' => ['admin.banner.banner.update', $banner->id], 'method' => 'put', 'id' => 'formbanner']) !!}
     <div class="row">
         <div class="col-md-12">
             <div class="nav-tabs-custom">
@@ -64,5 +64,23 @@
                 radioClass: 'iradio_flat-blue'
             });
         });
+    </script>
+    <script>
+    $("#formbanner").validate({
+        rules: {
+        @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+            "<?= $locale ?>[title]": { required: true},
+            "<?= $locale ?>[description]": { required: true},
+        @endforeach
+            "medias_single[image_banner]": { required: true}
+        },
+        messages: {
+            @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+            "<?= $locale ?>[title]": { required: "<?= trans('banner::banners.validation.title') ?>" },
+            "<?= $locale ?>[description]": { required: "<?= trans('banner::banners.validation.description') ?>"},
+            @endforeach
+            "medias_single[image_banner]": { required: "<?= trans('banner::banners.validation.image') ?>"}
+        }
+    });
     </script>
 @endpush

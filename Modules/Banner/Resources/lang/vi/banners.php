@@ -32,7 +32,9 @@ return [
         
     ],
     'validation' => [
-        'error_image' => 'Ảnh banner phải bắt buộc !!'
+        'error_image' => 'Ảnh banner phải bắt buộc !!',
+        'title' => 'Bắt buộc nhập tiêu đề',
+        'description' => 'Bắt buộc nhập mô tả'
     ],
     'status' => [
         'enable' => 'Hoạt động',

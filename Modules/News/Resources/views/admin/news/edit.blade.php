@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['admin.news.news.update', $news->id], 'method' => 'put']) !!}
+    {!! Form::open(['route' => ['admin.news.news.update', $news->id], 'method' => 'put', 'id' => 'form-news']) !!}
     <div class="row">
         <div class="col-md-12">
             <div class="nav-tabs-custom">
@@ -64,5 +64,27 @@
                 radioClass: 'iradio_flat-blue'
             });
         });
+    </script>
+    <script>
+    $("#form-news").validate({
+        rules: {
+        @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+            "<?= $locale ?>[title]": { required: true},
+            "<?= $locale ?>[slug]": { required: true},
+            "<?= $locale ?>[cat_id]": { required: true},
+            "<?= $locale ?>[content]": { required: true},
+        @endforeach
+        "medias_single[image_news]": { required: true}
+        },
+        messages: {
+            @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+            "<?= $locale ?>[title]": { required: "<?= trans('news::news.validation.title') ?>" },
+            "<?= $locale ?>[slug]": { required: "<?= trans('news::news.validation.slug') ?>"},
+            "<?= $locale ?>[cat_id]": { required: "<?= trans('news::news.validation.cat_id') ?>" },
+            "<?= $locale ?>[content]": { required: "<?= trans('news::news.validation.content') ?>"},
+            @endforeach
+            "medias_single[image_news]": { required: "<?= trans('news::news.validation.image') ?>"}
+        }
+    });
     </script>
 @endpush
