@@ -51,6 +51,7 @@ return [
         'curriculum' =>'Giáo trình',
         'instructor' =>'Người hướng dẫn',
         'name' =>'Họ tên',
+        'title' =>'Tiêu đề',
         'email' =>'Email',
         'message' =>'Nội dung',
         'day'=>'Ngày',

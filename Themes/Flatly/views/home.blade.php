@@ -171,60 +171,36 @@
         <h2>{{trans('core::core.pages-title.list_course')}}</h2>
     </div>
     <div class="row">
+        @if ($datacourse)
+        @foreach ($datacourse as $course)
         <div class="col-12 col-md-4">
             <div class="course">
-                <div class="banner-course">
-                    <img src="assets/images/course1.jpg"/>
-                    <span>FUNDAMENTER LEVER</span>
-                    <button><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
-                    <div class="over-black"></div>
-                </div>
-                <div class="content-course">
-                    <h5>Khóa học Blockchain cơ bản</h5>
-                    <hr>
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <span class="time-course"><i class="fa fa-clock-o" aria-hidden="true"></i> 8 Hour</span>
-                        <span class="price-course">$149.0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="course">
-                <div class="banner-course">
-                    <img src="assets/images/course2.jpg"/>
-                    <span>FUNDAMENTER LEVER</span>
+                <div class="banner-course">                       
+                    @if ($course->files()->first()->path)
+                    <img src="{{$course->files()->first()->path}}"/>
+                    @endif
+                    <span>{{ trans('course::courses.title.FUNDAMENTER LEVER') }}  </span>
                     <div class="over-black"></div>
                     <button><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
                 </div>
                 <div class="content-course">
-                    <h5>Khóa học Blockchain cơ bản</h5>
+                    <a href="{{ URL::route($currentLocale . '.course.slug', [$course->slug]) }}"><h5>{{$course->title }}</h5></a> 
                     <hr>
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                        <span class="time-course"><i class="fa fa-clock-o" aria-hidden="true"></i> 8 Hour</span>
-                        <span class="price-course">$149.0</span>
+                        <span class="time-course"><i class="fa fa-clock-o" aria-hidden="true"></i> 8 {{ trans('course::courses.frontend.hour') }}</span>
+                        <span class="price-course">  @if ( $course->promotion_price)
+                            $ {{ 	number_format($course->promotion_price)  }}
+                            @else
+                            $ {{ number_format($course->price)  }} 
+                             
+                            
+                        @endif</span>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-md-4">
-            <div class="course">
-                <div class="banner-course">
-                    <img src="assets/images/course3.jpg"/>
-                    <span>FUNDAMENTER LEVER</span>
-                    <div class="over-black"></div>
-                    <button><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
-                </div>
-                <div class="content-course">
-                    <h5>Khóa học Blockchain cơ bản</h5>
-                    <hr>
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <span class="time-course"><i class="fa fa-clock-o" aria-hidden="true"></i> 8 Hour</span>
-                        <span class="price-course">$149.0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> 
+        @endforeach
+    @endif
     </div>
     <div class="text-center mt-5">
         <button class="btn-read-more">{{trans('core::core.button.view-more')}}</button>
