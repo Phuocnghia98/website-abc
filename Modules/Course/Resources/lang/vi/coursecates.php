@@ -27,14 +27,13 @@ return [
         'status' => 'Trạng thái',
     ],
     'messages' => [
-        'name' => 'Name',
-        'slug' => 'Slug',
-        'description' => 'Description',
+        'coursecate error'=> 'Không thể xóa danh mục này! vui lòng xóa khóa học trước!'
        
     ],
     'validation' => [
-        'name' => 'Name',
-        'slug' => 'Slug',
-        'description' => 'Description',
+        'name is required' => 'Tên không được để trống',
+        'slug is required' => 'Slug không được để trống',
+        'slug unique' => 'Slug đã tồn tại',
+        'description is required' => 'Description không được để trống',
     ],
 ];

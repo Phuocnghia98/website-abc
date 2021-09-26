@@ -8,15 +8,17 @@ class UpdateTeacherRequest extends BaseFormRequest
 {
     public function rules()
     {
-        return [];
+        return [
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+        ];
     }
 
     public function translationRules()
     {
+        $id=$this->route()->parameter('teacher')->id;
         return [
             'name'=> 'required',
-            'email'=> 'required|email',
-            'phone'=> 'required',
+            'email'=> "required|email|unique:course__teacher_translations,email, $id,teacher_id,locale,$this->localeKey",
             'address'=> 'required',
         ];
     }
@@ -28,11 +30,21 @@ class UpdateTeacherRequest extends BaseFormRequest
 
     public function messages()
     {
-        return [];
+        return [
+            'phone.required'=>trans('course::teachers.validation.Phone is required'),
+            'phone.regex'=>trans('course::teachers.validation.Phone is invalid'),
+            'Phone min'=>trans('course::teachers.validation.Phone is invalid'),
+        ];
     }
 
     public function translationMessages()
     {
-        return [];
+        return [
+            'name.required'=>trans('course::teachers.validation.Name is required'),
+            'address.required'=>trans('course::teachers.validation.Address is required'),
+            'email.required'=>trans('course::teachers.validation.Email is required'),
+            'email.email'=>trans('course::teachers.validation.Email is invalid'),
+            'email.unique'=>trans('course::teachers.validation.Email unique'),
+        ];
     }
 }

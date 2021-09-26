@@ -13,8 +13,5 @@
     {!! Form::label("{$lang}[description]", trans('course::coursecates.form.description')) !!}
     {!! Form::text("{$lang}[description]", old("{$lang}[description]"), ['class' => 'form-control ', 'placeholder' => trans('course::coursecates.form.description')]) !!}
     {!! $errors->first("{$lang}.description", '<span class="help-block">:message</span>') !!}
-  
 </div>
-{!! Form::i18nCheckbox('status', 'Status', $errors, $lang) !!}
-
 </div>

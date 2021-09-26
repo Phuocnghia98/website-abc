@@ -47,7 +47,7 @@
                                 <td>
                                     <a href="{{ route('admin.course.course.edit', [$course->id]) }}">
                                        @if ($course->filesByZone('image')->first())
-                                       <img src="@thumbnail($course->filesByZone('image')->first()->path, 'mediumThumb')" alt="" /> 
+                                       <img src="@thumbnail($course->filesByZone('image')->first()->path, 'smallThumb')" alt="" /> 
                                        @endif
                                     </a>
                                 </td>
@@ -92,7 +92,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.course.course.edit', [$course->id]) }}">
-                                        {{ $course->created_at }}
+                                        {{ $course->created_at->format('d - m - Y') }}
                                     </a>
                                 </td>
                                 <td>

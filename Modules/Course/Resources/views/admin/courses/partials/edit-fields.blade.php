@@ -36,9 +36,9 @@
                 {!! Form::select("{$lang}[teacher_id]",  $teacher->pluck('name', 'id'), old("{$lang}[teacher_id]",$course->teacher_id ), ['class' => 'form-control']) !!}
                 {!! $errors->first("{$lang}.teacher_id", '<span class="help-block">:message</span>') !!}
              </div>
-                {!! Form::i18nInputOfType('number','price', 'Price', $errors, $lang,$course) !!}
-                {!! Form::i18nInputOfType('number','promotion_price', 'Promotion price', $errors, $lang,$course) !!}
-                @mediaSingle('image', $course)
+                {!! Form::i18nInputOfType('text','price', 'Price', $errors, $lang,$course) !!}
+                {!! Form::i18nInputOfType('text','promotion_price', 'Promotion price', $errors, $lang,$course) !!}
+             
                
         </div>
     </div>

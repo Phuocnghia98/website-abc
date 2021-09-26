@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['admin.course.coursecate.store'], 'method' => 'post']) !!}
+    {!! Form::open(['route' => ['admin.course.coursecate.store'], 'method' => 'post','id'=>'formCreate']) !!}
     <div class="row">
         <div class="col-md-12">
             <div class="nav-tabs-custom">
@@ -48,6 +48,7 @@
 @stop
 
 @push('js-stack')
+
     <script type="text/javascript">
         $( document ).ready(function() {
             $(document).keypressAction({

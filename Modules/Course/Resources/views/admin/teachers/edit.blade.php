@@ -25,7 +25,7 @@
                             @include('course::admin.teachers.partials.edit-fields', ['lang' => $locale])
                         </div>
                     @endforeach
-
+                    {!! Form::normalInput('phone', 'Phone', $errors,$teacher) !!}
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.update') }}</button>
                         <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.course.teacher.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>

@@ -20,7 +20,7 @@ class CreateCourseTeacherTranslationsTable extends Migration
             $table->string('email');
             $table->string('address');
             $table->string('infor')->nullable();
-            $table->integer('phone');
+            $table->char('phone',15);
             $table->integer('teacher_id')->unsigned();
             $table->string('locale')->index();
             $table->unique(['teacher_id', 'locale']);

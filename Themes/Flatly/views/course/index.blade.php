@@ -141,13 +141,13 @@
         <div class="col-sm-6 ">
             <div class="video2 ">
 
-                <div class="youtube" id="vYE2WyHypF0 " src="{!! url('assets/images/blog-17-copyright-min-1024x576.jpg ')!!}" style=" width:100%; height:100%; "></div>
+                <div class="youtube" id="1R1ZIe9qb1s" src="{!! url('assets/images/blog-17-copyright-min-1024x576.jpg ')!!}" style=" width:100%; height:100%; "></div>
 
 
             </div>
 
 
-            <h4 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title1') }}</a></h4>
+            <h4 class="mt-3 "><a href="https://youtu.be/1R1ZIe9qb1s" class="link ">{{ trans('course::courses.frontend.title1') }}</a></h4>
         </div>
         <div class="col-sm-6 ">
             <div class="video2 ">
@@ -156,7 +156,7 @@
 
 
             </div>
-            <h4 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title2') }}</a></h4>
+            <h4 class="mt-3 "><a href="https://youtu.be/1R1ZIe9qb1s" class="link ">{{ trans('course::courses.frontend.title2') }}</a></h4>
         </div>
 
     </div>
@@ -170,21 +170,21 @@
                 <div class="youtube  " id="VXzAJd8UJl8 " src="{!! url('assets/images/courses-5-copyright-min-416x268.jpg')!!} " style="width:100%; height: 100%; "></div>
 
             </div>
-            <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title3') }}</a></h6>
+            <h6 class="mt-3 "><a href="https://youtu.be/g_eB1vK_2co" class="link ">{{ trans('course::courses.frontend.title3') }}</a></h6>
         </div>
         <div class="col-sm-3 ">
             <div class="video ">
                 <div class="youtube  " id="VXzAJd8UJl8 " src="{!! url('assets/images/blog-14-copyright-min-370x208.jpg')!!} " style="width:100%; height: 100% "></div>
 
             </div>
-            <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title4') }}</a></h6>
+            <h6 class="mt-3 "><a href="https://youtu.be/g_eB1vK_2co" class="link ">{{ trans('course::courses.frontend.title4') }}</a></h6>
         </div>
         <div class="col-sm-3 ">
             <div class="video ">
                 <div class="youtube  " id="VXzAJd8UJcourses-8-copyright-min.jpg=" src="{!! url('assets/images/blog-14-copyright-min-370x208.jpg ')!!}"  style="width:100%; height: 100% "></div>
 
             </div>
-            <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title1') }}</a></h6>
+            <h6 class="mt-3 "><a href="https://youtu.be/g_eB1vK_2co" class="link ">{{ trans('course::courses.frontend.title1') }}</a></h6>
         </div>
         <div class="col-sm-3 ">
             <div class="video ">
@@ -192,8 +192,8 @@
 
             </div>
 
-            <a href="# " class="link ">
-                <h6 class="mt-3 "><a href="# " class="link ">{{ trans('course::courses.frontend.title3') }}</a></h6>
+            <a href="https://youtu.be/g_eB1vK_2co" class="link ">
+                <h6 class="mt-3 "><a href="https://youtu.be/g_eB1vK_2co" class="link ">{{ trans('course::courses.frontend.title3') }}</a></h6>
             </a>
 
         </div>
@@ -201,7 +201,7 @@
     </div>
     <div class="row ">
         <div class="col-12 text-center p-5 ">  
-                        <button class="btn-read-more">{{ trans('course::courses.button.viewmore') }}</button>
+                        <a href="https://www.youtube.com/channel/UCoSG43KFjTe0trsteSQ46Ng"><button class="btn-read-more">{{ trans('course::courses.button.viewmore') }}</button></a>
                     </div>
 
     </div>

@@ -25,17 +25,19 @@ return [
         'email' => 'Email',
         'phone' => 'Phone',
         'address' => 'address',
+        'Information'=>'Information'
     ],
     'messages' => [
-        'name' => 'Name',
-        'email' => 'Email',
-        'phone' => 'Phone',
-        'address' => 'address',
+        'teacher error'=> "Can't delete teacher"       
     ],
     'validation' => [
-       'name' => 'Name',
-        'email' => 'Email',
-        'phone' => 'Phone',
-        'address' => 'address',
+        'Name is required' => 'Name is required',
+        'Email is required' => 'Email is required',
+        'Phone is required' => 'Phone is required',
+        'Phone is invalid' => 'Phone is invalid',
+        'Phone min' => 'The phone must be at least 10 characters',
+        'Email unique' => 'Email has already been taken',
+        'Email invalid' => 'Email is invalid',
+        'Address is required' => 'Address is required',
     ],
 ];

@@ -15,7 +15,7 @@ class CreateCourseCateRequest extends BaseFormRequest
     {
         return [
             'name' =>'required',
-            'slug' =>'required',
+            'slug' =>"required|unique:course__coursecate_translations,slug,null,course_cate_id,locale,$this->localeKey",
             'description' =>'required',
         ];
     }
@@ -33,8 +33,10 @@ class CreateCourseCateRequest extends BaseFormRequest
     public function translationMessages()
     {
         return [
-            'name.required' =>trans('name is required'),
-            'slug.required' =>trans('slug  is required'),
+            'name.required' =>trans('course::coursecates.validation.name is required'),
+            'slug.required' =>trans('course::coursecates.validation.slug is required'),
+            'description.required' =>trans('course::coursecates.validation.description is required'),
+            'slug.unique' =>trans('course::coursecates.validation.slug unique'),
         ];
     }
 }

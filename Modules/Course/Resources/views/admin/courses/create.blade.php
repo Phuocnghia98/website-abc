@@ -26,6 +26,7 @@
                         </div>
                     
                     @endforeach
+                    @mediaSingle('image')
 
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.create') }}</button>
