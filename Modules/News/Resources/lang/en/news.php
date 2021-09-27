@@ -40,6 +40,11 @@ return [
     'messages' => [
     ],
     'validation' => [
-        'error_image' => 'Image news field is required'
+        'error_image' => 'Image news field is required',
+        'title' => 'Title is required',
+        'slug' => 'Slug is required',
+        'cat_id' => 'Category is required',
+        'content' => 'Content is required',
+        'image' => 'Image is required'
     ],
 ];

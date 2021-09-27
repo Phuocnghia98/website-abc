@@ -31,7 +31,6 @@
                             <tr>
                                 <th>{{ trans('news::news_categories.table.name') }}</th>
                                 <th>{{ trans('news::news_categories.table.slug') }}</th>
-                                <th>{{ trans('news::news_categories.table.description') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>
@@ -52,12 +51,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.news.news_categories.edit', [$news_categories->id]) }}">
-                                        {{ $news_categories->description }}
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('admin.news.news_categories.edit', [$news_categories->id]) }}">
-                                        {{ $news_categories->created_at }}
+                                        {{ $news_categories->created_at->format('d/m/Y') }}
                                     </a>
                                 </td>
                                 <td>

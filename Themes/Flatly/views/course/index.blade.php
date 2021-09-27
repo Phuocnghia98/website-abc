@@ -46,7 +46,7 @@
                 <div class="col-12 col-md-4">
                     <div class="course">
                         <div class="banner-course">                       
-                            @if ($course->files()->first()->path)
+                            @if ($course->files()->first())
                             <img src="{{$course->files()->first()->path}}"/>
                             @endif
                             <span>{{ trans('course::courses.title.FUNDAMENTER LEVER') }}  </span>

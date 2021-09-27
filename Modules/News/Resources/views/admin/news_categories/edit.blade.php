@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-    {!! Form::open(['route' => ['admin.news.news_categories.update', $news_categories->id], 'method' => 'put']) !!}
+    {!! Form::open(['route' => ['admin.news.news_categories.update', $news_categories->id], 'method' => 'put', 'id' => 'form-news-cat']) !!}
     <div class="row">
         <div class="col-md-12">
             <div class="nav-tabs-custom">
@@ -64,5 +64,21 @@
                 radioClass: 'iradio_flat-blue'
             });
         });
+    </script>
+    <script>
+    $("#form-news-cat").validate({
+        rules: {
+        @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+            "<?= $locale ?>[name]": { required: true},
+            "<?= $locale ?>[slug]": { required: true},
+        @endforeach
+        },
+        messages: {
+            @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
+            "<?= $locale ?>[name]": { required: "<?= trans('news::news_categories.validation.name') ?>" },
+            "<?= $locale ?>[slug]": { required: "<?= trans('news::news_categories.validation.slug') ?>"},
+            @endforeach
+        }
+    });
     </script>
 @endpush

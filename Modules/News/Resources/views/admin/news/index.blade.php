@@ -29,10 +29,9 @@
                         <table class="data-table table table-bordered table-hover">
                             <thead>
                             <tr>
+                                 <th>{{ trans('news::news.table.image') }}</th>
                                 <th>{{ trans('news::news.table.title') }}</th>
                                 <th>{{ trans('news::news.table.slug') }}</th>
-                                <th>{{ trans('news::news.table.image') }}</th>
-                                <th>{{ trans('news::news.table.description') }}</th>
                                 <th>{{ trans('news::news.table.user_id') }}</th>
                                 <th>{{ trans('news::news.table.cat_id') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
@@ -43,7 +42,14 @@
                             <?php if (isset($news)): ?>
                             <?php foreach ($news as $news): ?>
                             <tr>
-                            <td>
+                                <td>
+                                    @if ($news->filesByZone('image_news')->first())
+                                    <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
+                                        <img src="@thumbnail($news->filesByZone('image_news')->first()->path, 'smallThumb')" alt="News" />
+                                    </a>
+                                    @endif
+                                </td>
+                                <td>
                                     <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
                                         {{ $news->title }}
                                     </a>
@@ -51,19 +57,6 @@
                                 <td>
                                     <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
                                         {{ $news->slug }}
-                                    </a>
-                                </td>
-                                <td>
-                                    @if ($news->filesByZone('image_news')->first())
-                                    <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
-                                        <img src="@thumbnail($news->filesByZone('image_news')->first()->path, 'smallThumb')" alt="News" />
-                                    </a>
-                                    @endif
-                                
-                                </td>
-                                <td>
-                                    <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
-                                        {{ $news->description }}
                                     </a>
                                 </td>
                                 <td>
@@ -75,16 +68,16 @@
 
                                 <td>
                                     <a href="{{ route('admin.news.news.edit', [$news->id]) }}">
-                                        {{ $news->created_at }}
+                                        {{ $news->created_at->format('d/m/Y') }}
                                     </a>
                                 </td>
                                 <td>
                                     <div class="btn-group">
                                     @if ($news->filesByZone('image_news')->first())
                                         <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews(
-                                            {{$news}},'{{ optional($news->getUser)->last_name }}','{{ optional($news->getNewsCat)->name }}','{{$news->files()->first()->path}}' )">{{ trans('news::news.table.detail') }}</button>
+                                            {{$news}},'{{ optional($news->getUser)->last_name }}','{{ optional($news->getNewsCat)->name }}','{{$news->files()->first()->path}}' )"><i class="fa fa-info-circle"></i></button>
                                     @else
-                                    <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews({{$news}},'{{ optional($news->getUser)->last_name }}','{{ optional($news->getNewsCat)->name }}')">{{ trans('news::news.table.detail') }}</button>
+                                    <button class="btn btn-primary btn-flat mr-2" data-toggle="modal" data-target="#modaldetail" onclick="detailNews({{$news}},'{{ optional($news->getUser)->last_name }}','{{ optional($news->getNewsCat)->name }}')"><i class="fa fa-info-circle"></i></button>
                                     @endif
                                         <a href="{{ route('admin.news.news.edit', [$news->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
                                         <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.news.news.destroy', [$news->id]) }}"><i class="fa fa-trash"></i></button>
@@ -216,6 +209,7 @@
                 <span><i class="fa fa-book" aria-hidden="true"></i>${category}</span>
             </div>
             <div class="content">
+                <p>${news.description}</p>
                 ${news.content}
             </div>
            `;

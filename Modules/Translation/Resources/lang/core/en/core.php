@@ -101,7 +101,8 @@ return [
         'cooperate' => 'Cooperate',
         'home' => 'Home',
         'categories' => 'Categories',
-        'search' => 'Search'
+        'search' => 'Search',
+        'contact-information' => 'Contact Information'
     ],
     'form' => [
         'search' => 'Search',
@@ -109,5 +110,9 @@ return [
         'phone' => 'Telephone number',
         'content' => 'Content',
         'submit' => 'Submit'
+    ],
+    'footer' => [
+        'phone' => 'Phone',
+        'address' => 'Address',
     ]
 ];

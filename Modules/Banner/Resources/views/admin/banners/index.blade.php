@@ -29,9 +29,9 @@
                         <table class="data-table table table-bordered table-hover">
                             <thead>
                             <tr>
+                                <th>{{ trans('banner::banners.table.image banner') }}</th>
                                 <th>{{ trans('banner::banners.table.title') }}</th>
                                 <th>{{ trans('banner::banners.table.description') }}</th>
-                                <th>{{ trans('banner::banners.table.image banner') }}</th>
                                 <th>{{ trans('banner::banners.table.status') }}</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
@@ -41,6 +41,11 @@
                             <?php if (isset($banners)): ?>
                             <?php foreach ($banners as $banner): ?>
                             <tr>
+                            <td>
+                                    @if ($banner->filesByZone('image_banner')->first())
+                                        <img src="@thumbnail($banner->filesByZone('image_banner')->first()->path, 'mediumThumb')" alt="Banner" />
+                                    @endif    
+                                </td>
                             <td>
                                     <a href="{{ route('admin.banner.banner.edit', [$banner->id]) }}">
                                         {{ $banner->title }}
@@ -52,11 +57,6 @@
                                     </a> 
                                 </td>
                                 <td>
-                                    @if ($banner->filesByZone('image_banner')->first())
-                                        <img src="@thumbnail($banner->filesByZone('image_banner')->first()->path, 'smallThumb')" alt="Banner" />
-                                    @endif    
-                                </td>
-                                <td>
                                     <span class="label label-{{$banner->status ? 'success' : 'danger'}}">
                                         
                                         {{ $banner->status ? trans('banner::banners.status.enable') : trans('banner::banners.status.disable') }}
@@ -64,7 +64,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.banner.banner.edit', [$banner->id]) }}">
-                                        {{ $banner->created_at }}
+                                        {{ $banner->created_at->format('d/m/Y') }}
                                     </a>
                                 </td>
                                 <td>
