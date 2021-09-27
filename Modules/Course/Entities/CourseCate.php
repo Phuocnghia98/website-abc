@@ -14,5 +14,8 @@ class CourseCate extends Model
     public $translatedAttributes = ['name', 'slug','description','status'];
     protected $fillable = ['name', 'slug','description','status'];
     protected $table = 'course__coursecates';
-  
+    public function courses(){
+        return $this->hasMany(CourseTranslation::class,"course_cates_id","id")->where('locale',app()->getLocale());
+    }
+   
 }

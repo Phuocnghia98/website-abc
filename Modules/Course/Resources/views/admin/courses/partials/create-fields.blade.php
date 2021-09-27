@@ -16,10 +16,7 @@
             {!! Form::text("{$lang}[description]", old("{$lang}[description]"), ['class' => 'form-control', 'placeholder' => trans('course::courses.form.description')]) !!}
             {!! $errors->first("{$lang}.description", '<span class="help-block">:message</span>') !!}
             </div>
-            {!! Form::i18nTextarea('content', 'Content', $errors, $lang) !!}
-            {!! Form::i18nCheckbox('status', 'Status', $errors, $lang) !!}
-           
-            
+            {!! Form::i18nTextarea('content', trans('course::courses.form.content'), $errors, $lang) !!}           
         </div>
         <div class="col-lg-2">
             <div class='form-group{{ $errors->has("{$lang}.course_cates_id") ? ' has-error' : '' }}'>
@@ -33,10 +30,9 @@
                 {!! Form::select("{$lang}[teacher_id]",  $teacher->pluck('name', 'id'),null, ['class' => 'form-control']) !!}
                 {!! $errors->first("{$lang}.teacher_id", '<span class="help-block">:message</span>') !!}
              </div>
-                {!! Form::i18nInputOfType('number','price', 'Price', $errors, $lang) !!}
-                {!! Form::i18nInputOfType('number','promotion_price', 'Promotion price', $errors, $lang) !!}
-                @mediaSingle('image')
-               
+                {!! Form::i18nInputOfType('text','price', trans('course::courses.form.price'), $errors, $lang) !!}
+                {!! Form::i18nInputOfType('text','promotion_price', trans('course::courses.form.promotion_price'), $errors, $lang) !!}
+                        
         </div>
     </div>
    

@@ -28,7 +28,7 @@ return [
         'title'=> 'Tiêu đề',
         'slug'=> 'Slug',
         'description'=> 'Mô tả',
-        'content'=> 'Content',
+        'content'=> 'Mô tả chi tiết',
         'price'=> 'Giá ',
         'categoryname'=> 'Danh mục',
         'teacher_id'=> 'Giáo viên',
@@ -39,8 +39,9 @@ return [
         'title'=> 'Tiêu đề ',
         'slug'=> 'Slug',
         'description'=> 'Mô tả',
-        'content'=> 'Nội dung',
+        'content'=> 'Mô tả chi tiết',
         'price'=> 'Giá',
+        'image'=> 'Hình ảnh',
         'promotion_price'=> 'Giá khuyến mãi',
         'teacher_id'=> 'Giáo viên',
         'status'=> 'Trạng thái',
@@ -66,5 +67,10 @@ return [
     'messages' => [
     ],
     'validation' => [
+        'title is required' => 'Tiêu đề không được để trống',
+        'slug is required' => 'Slug không được để trống',
+        'Price is numeric' => 'Giá không hợp lệ',
+        'slug unique' => 'Slug đã tồn tại',
+        'price is required' => 'Giá không được để trống',
     ],
 ];

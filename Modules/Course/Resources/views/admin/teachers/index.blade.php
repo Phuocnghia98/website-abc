@@ -53,7 +53,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('admin.course.teacher.edit', [$teacher->id]) }}">
-                                        0{{ $teacher->phone }}
+                                        {{ $teacher->phone }}
                                     </a>
                                 </td>
                                 <td>
@@ -64,7 +64,7 @@
                             
                                 <td>
                                     <a href="{{ route('admin.course.teacher.edit', [$teacher->id]) }}">
-                                        {{ $teacher->created_at }}
+                                        {{ $teacher->created_at->format('d - m - Y ') }}
                                     </a>
                                 </td>
                                 <td>

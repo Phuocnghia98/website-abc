@@ -95,7 +95,7 @@ class TeacherController extends AdminBaseController
     {
         $this->teacher->destroy($teacher);
 
-        return redirect()->route('admin.course.teacher.index')
-            ->withSuccess(trans('core::core.messages.resource deleted', ['name' => trans('course::teachers.title.teachers')]));
+        return redirect()->route('admin.course.teacher.index');
+           
     }
 }

@@ -6,7 +6,7 @@ return [
     'edit resource' => 'Edit coursecates',
     'destroy resource' => 'Destroy coursecates',
     'title' => [
-        'coursecates' => 'CourseCate',
+        'coursecates' => 'Course category',
         'create coursecate' => 'Create a coursecate',
         'edit coursecate' => 'Edit a coursecate',
     ],
@@ -27,14 +27,13 @@ return [
         'status' => 'Status',
     ],
     'messages' => [
-        'name' => 'Name',
-        'slug' => 'Slug',
-        'description' => 'Description',
+        'coursecate error'=> "Can't delete  Course category ."
        
     ],
     'validation' => [
-        'name' => 'Name',
-        'slug' => 'Slug',
-        'description' => 'Description',
+        'name is required' => 'Name is required',
+        'slug is required' => 'Slug is required',
+        'slug unique' => 'Slug has already been taken',
+        'description is required' => 'Description is required',
     ],
 ];

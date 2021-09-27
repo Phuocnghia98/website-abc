@@ -69,7 +69,7 @@
 
                                 <td>
                                     <a href="{{ route('admin.course.coursecate.edit', [$coursecate->id]) }}">
-                                        {{ $coursecate->created_at }}
+                                        {{ $coursecate->created_at->format('d - m -Y') }}
                                     </a>
                                 </td>
                                 <td>

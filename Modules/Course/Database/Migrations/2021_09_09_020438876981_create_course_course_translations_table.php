@@ -21,7 +21,7 @@ class CreateCourseCourseTranslationsTable extends Migration
             $table->string('description')->nullable();
             $table->float('price');
             $table->float('promotion_price')->nullable();
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
             $table->text('content')->nullable();
             $table->integer('course_cates_id')->index();
             $table->integer('teacher_id')->index();

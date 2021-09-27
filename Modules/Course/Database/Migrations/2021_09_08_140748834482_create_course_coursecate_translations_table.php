@@ -18,7 +18,7 @@ class CreateCourseCourseCateTranslationsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('description')->nullable();
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
             $table->integer('course_cate_id')->unsigned();
             $table->string('locale')->index();
             $table->unique(['course_cate_id', 'locale']);

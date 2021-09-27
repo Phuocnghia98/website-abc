@@ -98,7 +98,6 @@ class CourseCateController extends AdminBaseController
     {
         $this->coursecate->destroy($coursecate);
 
-        return redirect()->route('admin.course.coursecate.index')
-            ->withSuccess(trans('core::core.messages.resource deleted', ['name' => trans('course::coursecates.title.coursecates')]));
+        return redirect()->route('admin.course.coursecate.index');
     }
 }

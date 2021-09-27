@@ -13,4 +13,16 @@ class EloquentCourseCateRepository extends EloquentBaseRepository implements Cou
             $q->where('status', 1)->where('locale', "$lang");
         })->with('translations')->orderBy('created_at', 'DESC')->get();
     }
+    public function destroy($model)
+    {
+      if (count($model->courses)>0) {
+         return redirect()->route('admin.course.coursecate.index')
+         ->withError(trans('course::coursecates.messages.coursecate error'));
+      }else{
+        $model->delete();
+        return  redirect()->route('admin.course.coursecate.index')
+        ->withSuccess(trans('core::core.messages.resource deleted', ['name' => trans('course::coursecates.title.coursecates')]));
+      }
+        
+    }
 }

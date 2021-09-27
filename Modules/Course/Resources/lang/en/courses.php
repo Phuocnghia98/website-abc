@@ -42,6 +42,7 @@ return [
         'content'=> 'Content',
         'price'=> 'Price',
         'promotion_price'=> 'Promotion_price',
+        'image'=> 'Image',
         'teacher_id'=> 'Teacher',
         'status'=> 'Status',
         'course_cates_id'=> 'Course category',
@@ -67,5 +68,10 @@ return [
         
     ],
     'validation' => [
+        'title is required' => 'Name is required',
+        'slug is required' => 'Slug is required',
+        'Price is numeric' => 'Slug is invalid',
+        'slug unique' => 'Slug has already been taken',
+        'price is required' => 'Price is required',
     ],
 ];
