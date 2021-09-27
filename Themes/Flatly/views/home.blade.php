@@ -52,7 +52,7 @@
                 <form action="" class="d-flex form-contact">
                 <input type="text" placeholder="{{ trans('core::core.form.name') }}" />
                 <input type="text" placeholder="{{ trans('core::core.form.phone') }}" />
-                <input type="submit" placeholder="Callback" value="{{trans('core::core.button.call-now')}}" />
+                <input type="submit" placeholder="Callback" value="{{trans('core::core.button.Send')}}" />
                 </form>
             </div>
             <div class="row contact-info" >

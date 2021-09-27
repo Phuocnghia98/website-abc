@@ -38,7 +38,7 @@ return [
         'see' => 'See',
         'visualize' => 'Visualize',
         'update and back' => 'Update and go back',
-        'call-now' => 'Gọi Ngay',
+        'Send' => 'Gửi',
         'view-more' => 'Xem thêm'
     ],
     'save' => 'Save',
