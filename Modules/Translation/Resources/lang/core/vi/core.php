@@ -38,7 +38,7 @@ return [
         'see' => 'See',
         'visualize' => 'Visualize',
         'update and back' => 'Update and go back',
-        'Send' => 'Gửi',
+        'send' => 'Gửi',
         'view-more' => 'Xem thêm'
     ],
     'save' => 'Save',
@@ -67,6 +67,8 @@ return [
         'resource not found' => ':name not found.',
         'resource updated' => ':name successfully updated.',
         'resource deleted' => ':name successfully deleted.',
+        'resource send success' => 'Gửi Thành Công!',
+        
     ],
     'back' => 'Back',
     'back to index' => 'Back to :name index',
@@ -108,7 +110,8 @@ return [
         'name' => 'Tên',
         'phone' => 'Số điện thoại',
         'content' => 'Nội dung',
-        'submit' => 'Gửi'
+        'submit' => 'Gửi',
+        
     ],
     'footer' => [
         'phone' => 'Số điện thoại',

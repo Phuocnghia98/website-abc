@@ -13,3 +13,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/** @var Router $router */
+
+$locale = LaravelLocalization::setLocale() ?: App::getLocale();
+//  dd($locale);
+  $router->post('/contact', [
+      'as' => $locale.'.contact',
+      'uses' => 'ContactController@index'
+  ])->name('homeContact');
+  

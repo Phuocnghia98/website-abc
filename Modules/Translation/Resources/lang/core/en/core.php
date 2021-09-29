@@ -40,7 +40,8 @@ return [
         'visualize' => 'Visualize',
         'update and back' => 'Update and go back',
         'call-now' => 'Call Now',
-        'view-more' => 'View more'
+        'view-more' => 'View more',
+        'send' => 'Send',
     ],
     'save' => 'Save',
     'confirm' => 'Confirm',
@@ -68,6 +69,7 @@ return [
         'resource not found' => ':name not found.',
         'resource updated' => ':name successfully updated.',
         'resource deleted' => ':name successfully deleted.',
+        'resource send success' => 'Successfully Sent!',
     ],
     'back' => 'Back',
     'back to index' => 'Back to :name index',

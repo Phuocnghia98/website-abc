@@ -14,3 +14,4 @@ $router->group(['prefix' =>'/course'], function (Router $router) {
         'uses' => 'PublicController@show'
     ]);
 });
+

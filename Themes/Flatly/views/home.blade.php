@@ -49,12 +49,19 @@
                 <div class="headding--primary">
                     <h2>{{trans('core::core.pages-title.contact')}}?</h2>
                 </div>
-                <form action="" class="d-flex form-contact">
-                <input type="text" placeholder="{{ trans('core::core.form.name') }}" />
-                <input type="text" placeholder="{{ trans('core::core.form.phone') }}" />
-                <input type="submit" placeholder="Callback" value="{{trans('core::core.button.Send')}}" />
+                <form id="contactForm" action="{{ route('contacts') }}" class="d-flex form-contact" methos="POST">
+                {{ csrf_field() }}
+                <input type="text" name="{{$currentLocale }}[name]" id="name" placeholder="{{ trans('core::core.form.name') }}" />
+                <input type="text" name="phone" id="phone" placeholder="{{ trans('core::core.form.phone') }}" />
+                <input type="submit" placeholder="Callback" value="{{trans('core::core.button.send')}}" />
+                {{-- <button type="submit" class="btn btn-primary">{{trans('core::core.button.send')}}</button> --}}
                 </form>
+                
+                
             </div>
+                <div class="notification-contact " >
+                    <span id="message-success-contact" ></span>
+                </div>
             <div class="row contact-info" >
                 <div class="col-12 col-md-4 item__info mb-3">
                     <div class="item__info--image">
@@ -208,3 +215,31 @@
 </div>
 </section>
 @stop
+@push('js-stack')
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $('#contactForm').on('submit', function(e) {
+            e.preventDefault();
+
+            name = $('#name').val();
+            phone = $('#phone').val();
+
+            $.ajax({
+                url: "{{ route('contacts') }}",
+                method:"POST",
+                data:{
+                    "_token": "{{ csrf_token() }}",
+                    name:name,
+                    phone:phone,
+                },
+                success:function(response){
+                    $("#message-success-contact").html("{{trans('core::core.messages.resource send success')}}");
+                    window.location.href = "/";
+                },
+            })
+        });
+    </script>
+@endpush
